@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uputstvo za TOG Drive</title>
+<meta name="description" content="Instalacija na Windows, macOS i Linux, pravljenje naloga, fraza za oporavak, sinhronizacija, deljenje, javni linkovi, kanta, uređaji i odgovori na česta pitanja.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#345b8c">
+<link rel="alternate" hreflang="sr-Latn" href="uputstvo.html">
+<link rel="alternate" hreflang="en" href="en/guide.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#sadrzaj">Preskoči na sadržaj</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#345b8c"/><path d="M10.2 22.5h11.6a4.6 4.6 0 0 0 .6-9.15 6.4 6.4 0 0 0-12.3 1.6 3.8 3.8 0 0 0 .1 7.55z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><rect x="13.3" y="16.2" width="5.4" height="4.4" rx="1" fill="#fff"/><path d="M14.4 16.3v-1.3a1.6 1.6 0 0 1 3.2 0v1.3" fill="none" stroke="#fff" stroke-width="1.5"/></svg><span>TOG Drive</span></a>
+    <nav class="nav" aria-label="Glavni meni">
+      <a href="index.html">Početna</a> <a href="uputstvo.html" aria-current="page">Uputstvo</a> <a href="kako-radi.html">Kako radi</a> <a href="privatnost.html">Privatnost</a> <a class="lang" href="en/guide.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+<main id="sadrzaj">
+<div class="page">
+  <div class="wrap with-toc">
+    <nav class="toc" aria-label="Sadržaj">
+      <strong>Sadržaj</strong>
+      <ol>
+        <li><a href="#instalacija">Instalacija</a></li>
+        <li><a href="#nalog">Novi nalog</a></li>
+        <li><a href="#fraza">Fraza za oporavak</a></li>
+        <li><a href="#prijava">Prijava na drugom uređaju</a></li>
+        <li><a href="#pregledac">Moj disk</a></li>
+        <li><a href="#sinhronizacija">Sinhronizacija</a></li>
+        <li><a href="#deljenje">Deljenje</a></li>
+        <li><a href="#linkovi">Javni linkovi</a></li>
+        <li><a href="#kanta">Kanta i verzije</a></li>
+        <li><a href="#uredjaji">Uređaji</a></li>
+        <li><a href="#oporavak">Oporavak frazom</a></li>
+        <li><a href="#pokretanje">Pokretanje i traka</a></li>
+        <li><a href="#mobilni">Mobilna aplikacija</a></li>
+        <li><a href="#cesta-pitanja">Česta pitanja</a></li>
+        <li><a href="#problemi">Rešavanje problema</a></li>
+      </ol>
+    </nav>
+    <article>
+      <h1>Uputstvo</h1>
+      <p class="lead muted">Sve što treba da znate da biste instalirali TOG Drive, napravili nalog i bezbedno ga koristili.</p>
+      <div class="warn"><p><strong>Alfa verzija.</strong> TOG Drive radi na testnoj mreži. Podaci mogu biti obrisani kada se testna mreža ponovo pokrene, a neke mogućnosti se još menjaju. Ne čuvajte u njemu jedinu kopiju važnih fajlova.</p></div>
+
+      <h2 id="instalacija">1. Instalacija</h2>
+      <p>Otvorite <a href="https://github.com/vahidzekic/theonlygrid-drive/releases/latest">stranicu poslednjeg izdanja</a> i u delu <em>Assets</em> preuzmite fajl za svoj sistem: <code>…-windows-x64.zip</code>, <code>…-linux-x64.tar.gz</code> ili fajl za macOS (<code>.zip</code>, a posle notarizacije <code>.dmg</code>). Aplikacija je za sada besplatna i radi na 64-bitnim računarima. Ako fajla za vaš sistem još nema u poslednjem izdanju, stiže u nekom od sledećih.</p>
+      <p class="fine">Uz svako izdanje je i fajl <code>SHA256SUMS</code> sa kontrolnim zbirovima, ako želite da proverite da je preuzeti fajl ispravan.</p>
+
+      <h3 id="windows">Windows</h3>
+      <ol>
+        <li>Preuzmite <code>tog-drive-…-windows-x64.zip</code>, desni klik → <strong>Extract All</strong> (Raspakuj sve) u fasciklu po izboru (na primer <code>Dokumenti\TOG Drive</code>).</li>
+        <li>Pokrenite <code>tog_drive.exe</code>.</li>
+        <li>Aplikacija još nije potpisana sertifikatom za Windows, pa se može pojaviti plavi prozor <em>„Windows je zaštitio vaš računar“</em> (Microsoft Defender SmartScreen). Kliknite <strong>Više informacija</strong>, pa <strong>Ipak pokreni</strong>. Ovo se traži samo pri prvom pokretanju nove verzije.</li>
+      </ol>
+      <p class="fine">Upozorenje znači samo da Windows još ne prepoznaje izdavača. Fajl preuzimajte isključivo sa naše stranice izdanja na GitHub-u, nikada iz drugih izvora.</p>
+
+      <h3 id="macos">macOS</h3>
+      <ol>
+        <li>Preuzmite fajl za macOS. ZIP se sam raspakuje dvoklikom; <code>.dmg</code> otvorite dvoklikom. Prevucite <strong>TOG Drive</strong> u fasciklu <strong>Applications</strong> (Aplikacije).</li>
+        <li>Dok aplikacija ne prođe Apple-ovu proveru (notarizaciju), macOS (Gatekeeper) pri prvom otvaranju kaže da ne može da proveri aplikaciju. Tada:
+          <ul>
+            <li>na macOS 14 i starijim: desni klik (ili Control + klik) na aplikaciju, pa <strong>Open</strong> (Otvori) i ponovo <strong>Open</strong> u prozoru koji se pojavi;</li>
+            <li>na macOS 15 i novijim: zatvorite upozorenje, otvorite <strong>System Settings → Privacy &amp; Security</strong>, spustite se do poruke o aplikaciji TOG Drive i kliknite <strong>Open Anyway</strong>, pa potvrdite lozinkom računara.</li>
+          </ul>
+        </li>
+        <li>Ključeve uređaja aplikacija čuva u Keychain-u. Posle nove verzije macOS može ponovo da pita da li TOG Drive sme da im pristupi: izaberite <strong>Always Allow</strong> (Uvek dozvoli).</li>
+      </ol>
+      <p>Potreban je macOS 12 (Monterey) ili noviji.</p>
+
+      <h3 id="linux">Linux</h3>
+      <p>Linux verzija je arhiva <code>.tar.gz</code> za x64. Radi na distribucijama sa GTK 3 i glibc 2.34 ili novijim (na primer Ubuntu 22.04 i 24.04, Debian 12, Fedora 36 i novije).</p>
+      <ol>
+        <li>Instalirajte biblioteku za ikonicu u traci. Bez nje se aplikacija ne pokreće (Ubuntu Desktop je obično već ima).
+<pre><code># Ubuntu, Debian i srodne
+sudo apt install libayatana-appindicator3-1
+
+# Fedora
+sudo dnf install libayatana-appindicator-gtk3</code></pre></li>
+        <li>Raspakujte arhivu i pokrenite aplikaciju direktno iz fascikle:
+<pre><code>tar xzf tog-drive-*-linux-x64.tar.gz
+cd tog-drive-*-linux-x64
+./tog_drive</code></pre></li>
+        <li>Ili je instalirajte za svog korisnika, bez <code>sudo</code>, sa stavkom u meniju aplikacija i ikonicom: <code>./install.sh</code> (aplikacija ide u <code>~/.local/share/tog-drive</code>). Ponovno pokretanje skripta iz nove verzije zamenjuje staru.</li>
+        <li>Za čuvanje ključeva aplikacija koristi sistemsko skladište lozinki (GNOME Keyring ili KWallet). Ako ga nema, ključevi ostaju u fajlu u vašem korisničkom folderu, dostupnom samo vama.</li>
+      </ol>
+
+      <h2 id="nalog">2. Novi nalog</h2>
+      <ol class="steps">
+        <li>Na početnom ekranu izaberite <strong>Novi nalog</strong>.</li>
+        <li>Izaberite <strong>korisničko ime</strong>: od 3 do 32 znaka, mala slova a–z, cifre i znakovi <code>.</code> <code>_</code> <code>-</code>. Po njemu vas drugi pronalaze kada žele da podele fasciklu sa vama.</li>
+        <li>Izaberite <strong>lozinku</strong> od najmanje 10 znakova i ponovite je. Lozinka nikada ne napušta vaš uređaj u obliku koji bi server mogao da pročita.</li>
+        <li>Upišite <strong>pozivni kod</strong>. Na testnoj mreži nalog se otvara samo uz kod. Uz kod dobijate i adresu servera, koju upisujete u polje <strong>Napredno: server</strong>. Ako to polje ostavite prazno, aplikacija radi samo lokalno na ovom računaru, bez mreže.</li>
+        <li>Aplikacija prikaže <strong>frazu za oporavak od 24 reči</strong> i upozorenje da niko ne može da vrati vaše podatke ako izgubite lozinku i frazu. Zapišite frazu (vidi sledeći odeljak) i potvrdite da razumete upozorenje.</li>
+        <li>Potvrdite frazu tako što upišete reči koje aplikacija traži. Tek tada se nalog zaista otvara na serveru. Ako zatvorite aplikaciju pre potvrde, ništa nije sačuvano i počinjete ispočetka.</li>
+      </ol>
+      <p>Ako server ne prihvati pozivni kod, nalog i fraza se ne gube: aplikacija samo ponovo traži kod. Kada je registracija otvorena (bez koda), aplikacija može da otvori kratku proveru u pregledaču da potvrdi da niste automatizovani program.</p>
+
+      <h2 id="fraza">3. Fraza za oporavak</h2>
+      <p>Fraza od 24 reči je glavni ključ vašeg naloga u obliku koji čovek može da zapiše. Napravljena je na vašem uređaju i mi je nikada ne vidimo.</p>
+      <h3>Zašto je važna</h3>
+      <ul>
+        <li>Ako zaboravite lozinku, frazom vraćate pristup i postavljate novu lozinku (<a href="#oporavak">Oporavak frazom</a>).</li>
+        <li>Ne postoji „zaboravljena lozinka“ preko e-maila. Pošto su fajlovi šifrovani ključevima koje samo vi imate, mi ne možemo da resetujemo pristup.</li>
+        <li>Ako izgubite <strong>i lozinku i frazu</strong> i nemate nijedan prijavljen uređaj, fajlovi su trajno izgubljeni.</li>
+        <li>Ko ima vašu frazu, ima pristup vašim fajlovima. Nikome je ne pokazujte. Nećemo vas nikada pitati za nju.</li>
+      </ul>
+      <h3>Kako da je čuvate</h3>
+      <ul>
+        <li>Zapišite reči rukom, redom i sa rednim brojevima, na papir. Proverite svaku reč dva puta.</li>
+        <li>Čuvajte papir na sigurnom mestu (kasa, fioka koja se zaključava). Druga kopija na drugom mestu nije loša ideja.</li>
+        <li>Ne slikajte frazu telefonom, ne šaljite je porukom ili e-mailom i ne čuvajte je u fajlu u istom TOG Drive-u.</li>
+        <li>Menadžer lozinki kojem verujete je prihvatljivo mesto za drugu kopiju.</li>
+      </ul>
+
+      <h2 id="prijava">4. Prijava na drugom uređaju</h2>
+      <p>Instalirajte aplikaciju na drugom računaru i izaberite <strong>Prijava</strong>. Upišite korisničko ime, lozinku i istu adresu servera, i dajte uređaju naziv (na primer „Laptop posao“), da ga kasnije prepoznate u spisku uređaja. Uređaj dobija svoje ključeve i pojavljuje se u <strong>Nalog → Uređaji</strong>.</p>
+      <p>Ako je sistemsko skladište ključeva zaključano, aplikacija vas pita da ga otključate i pokušate ponovo. Opcija <strong>Nastavi kao nov uređaj</strong> služi samo ako ključeve starog uređaja više ne možete da otvorite.</p>
+
+      <h2 id="pregledac">5. Moj disk: fajlovi i fascikle</h2>
+      <ul>
+        <li><strong>Moj disk</strong> prikazuje vaše fajlove i fascikle. <strong>Deljeno</strong> prikazuje fascikle koje delite i one koje drugi dele sa vama.</li>
+        <li><strong>Otpremi</strong> šalje fajlove sa računara. Fajl se šifruje pre slanja. Ako otpremite fajl sa istim imenom u istu fasciklu, on postaje nova verzija postojećeg.</li>
+        <li><strong>Nova fascikla</strong> pravi fasciklu. Desni klik (ili meni pored stavke) nudi <strong>Preuzmi</strong>, <strong>Preimenuj</strong>, <strong>Premesti</strong>, <strong>Podeli</strong>, <strong>Javni link</strong>, <strong>Verzije</strong>, <strong>Ko ima pristup</strong> i slanje u kantu.</li>
+        <li><strong>Preuzmi</strong> dešifruje fajl na vašem računaru i čuva ga gde izaberete.</li>
+        <li>Na stranici <strong>Nalog</strong> vidite iskorišćen prostor i kvotu. Na testnoj mreži besplatna kvota je 10 GB. U kvotu ulaze i kanta i sačuvane verzije.</li>
+      </ul>
+      <details><summary>Prečice na tastaturi</summary>
+        <p>Strelice, Home i End biraju stavku; Enter otvara fasciklu ili preuzima fajl; Backspace ide nazad; F2 preimenuje; Delete šalje u kantu (uz potvrdu); Ctrl+C kopira link; Shift+F10 otvara meni. Spisak je i u aplikaciji, na dugmetu sa tastaturom.</p>
+      </details>
+
+      <h2 id="sinhronizacija">6. Fascikla za sinhronizaciju (računar)</h2>
+      <p>Fascikla za sinhronizaciju je obična fascikla na vašem računaru koju TOG Drive drži istom kao vaš disk u oblaku.</p>
+      <ol class="steps">
+        <li>Otvorite stranicu <strong>Sinhronizacija</strong> i kliknite <strong>Izaberi fasciklu</strong>. Najbolje je da izaberete praznu fasciklu na lokalnom disku.</li>
+        <li>Kliknite <strong>Pokreni</strong>. Fajl koji stavite u fasciklu pojavljuje se u Moj disk, a fajl otpremljen sa drugog uređaja pojavljuje se u fascikli, obično za nekoliko sekundi. <strong>Sinhronizuj sada</strong> to radi odmah.</li>
+        <li>Stranica pokazuje stanje, vreme poslednje sinhronizacije i koliko fajlova čeka slanje ili preuzimanje.</li>
+      </ol>
+      <ul>
+        <li><strong>Konflikti.</strong> Ako je isti fajl izmenjen na dva mesta pre nego što su se uređaji uskladili, ništa se ne gubi: pored originala nastaje <em>konfliktna kopija</em> sa imenom uređaja i datumom. Na stranici Sinhronizacija možete da zadržite svoju verziju ili obrišete kopiju.</li>
+        <li><strong>Imena koja se ne sinhronizuju.</strong> Fajlove sa imenima koja neki sistemi ne dozvoljavaju (na primer sa znakom <code>:</code> ili imenom <code>CON</code>), prečice i posebne fajlove aplikacija preskače i navodi na stranici Sinhronizacija.</li>
+        <li><strong>Jedna fascikla, jedna aplikacija.</strong> Istu fasciklu ne mogu da sinhronizuju dve aplikacije istovremeno („folder je već u upotrebi“).</li>
+        <li><strong>Mrežni diskovi.</strong> Na mrežnom disku (NFS, SMB) izmene sa drugih računara stižu sporije, do nekoliko minuta. Koristite lokalni disk.</li>
+        <li><strong>Sinhronizacija radi dok aplikacija radi.</strong> Uključite pokretanje pri prijavi (vidi <a href="#pokretanje">Pokretanje i traka</a>).</li>
+        <li>Ako se sinhronizacija zaustavi zbog ozbiljne greške, pojavljuje se poruka i dugme <strong>Pokreni ponovo</strong>.</li>
+      </ul>
+
+      <h2 id="deljenje">7. Deljenje sa drugim nalozima</h2>
+      <ol class="steps">
+        <li>Desni klik na fasciklu → <strong>Podeli</strong>. Za sada se dele samo fascikle; za jedan fajl podelite fasciklu u kojoj je, ili napravite <a href="#linkovi">javni link</a>.</li>
+        <li>Upišite <strong>korisničko ime primaoca</strong>, kliknite <strong>Pronađi</strong> i izaberite <strong>pravo pristupa</strong>: samo čitanje ili čitanje i izmene.</li>
+        <li>Aplikacija prikaže <strong>otisak ključa</strong> primaoca: 8 grupa od po 5 cifara. Uporedite ga sa osobom drugim putem (uživo, telefonom, porukom u drugoj aplikaciji). Primalac svoj otisak vidi na stranici <strong>Nalog</strong>.</li>
+        <li>Ako se otisci poklapaju, štiklirajte <strong>Proverio sam otisak sa osobom</strong> i potvrdite. <strong>Ako se razlikuju, ne delite</strong>: neko možda pokušava da podmetne lažan ključ.</li>
+      </ol>
+      <p>Aplikacija pamti otisak naloga sa kojim ste delili i upozoriće vas ako se on kasnije promeni.</p>
+      <ul>
+        <li><strong>Ko ima pristup</strong> (desni klik na fasciklu) pokazuje vlasnika i sve sa kojima je fascikla podeljena.</li>
+        <li><strong>Ukini</strong> u kartici Deljeno prekida deljenje. Osoba odmah gubi pristup na serveru, ali može da zadrži ono što je već preuzela ili pročitala.</li>
+        <li><strong>Napusti</strong> uklanja fasciklu koju neko deli sa vama iz vašeg spiska.</li>
+        <li>Fajlovi koje član sa pravom izmena doda u vašu fasciklu računaju se u <em>vašu</em> kvotu. Član ne može trajno da obriše fajl; obrisano ide u kantu, odakle vlasnik može da ga vrati.</li>
+      </ul>
+
+      <h2 id="linkovi">8. Javni linkovi</h2>
+      <p>Javni link daje pristup jednom fajlu ili fascikli bilo kome ko ima link, bez naloga.</p>
+      <ol>
+        <li>Desni klik na stavku → <strong>Javni link</strong>.</li>
+        <li>Po želji postavite <strong>lozinku za link</strong>, <strong>rok</strong> (broj dana ili „Ne ističe“, ako server to dozvoljava) i <strong>najveći broj preuzimanja</strong>.</li>
+        <li>Kliknite <strong>Napravi link</strong> i <strong>Kopiraj</strong>.</li>
+      </ol>
+      <ul>
+        <li>Ključ za dešifrovanje je deo linka posle znaka <code>#</code>. Taj deo se nikada ne šalje serveru. Zato je link jedini ključ: ko ga ima, može da otvori sadržaj. Lozinku pošaljite drugim putem nego sam link.</li>
+        <li>Link za fajl uvek daje trenutnu verziju fajla.</li>
+        <li><strong>Linkovi</strong> pokazuje sve vaše linkove, sa brojem preuzimanja, rokom i oznakom lozinke. Ceo URL vidite samo na uređaju na kome je link napravljen; na drugom uređaju piše „link napravljen na drugom uređaju“, ali ga i tamo možete obrisati.</li>
+        <li><strong>Obriši link</strong> ga odmah gasi. Novi link za istu stavku je poseban i ne gasi stari.</li>
+        <li>Server može da ograniči linkove za nove besplatne naloge (na primer tek posle 30 dana od otvaranja naloga) i broj preuzimanja dnevno, radi sprečavanja zloupotrebe.</li>
+        <li>U alfi primalac otvara link alatom TOG Drive za komandnu liniju; otvaranje u pregledaču je u planu.</li>
+      </ul>
+
+      <h2 id="kanta">9. Kanta i verzije</h2>
+      <ul>
+        <li>Obrisan fajl ili fascikla ide u <strong>Kantu</strong> i tamo stoji <strong>30 dana</strong>. Pored svake stavke piše koliko je dana ostalo do trajnog brisanja.</li>
+        <li><strong>Vrati</strong> je vraća na staro mesto. <strong>Obriši zauvek</strong> je briše odmah i to se ne može poništiti.</li>
+        <li>Posle trajnog brisanja ključevi fajla se uništavaju, pa šifrovani podaci koji još postoje na mreži više ne mogu da se pročitaju.</li>
+        <li><strong>Verzije</strong> (desni klik na fajl) pokazuje sačuvane verzije sa datumom, veličinom i uređajem. Svaku možete preuzeti, a stariju vratiti; vraćanje pravi novu verziju i ništa ne briše. Starije verzije se čuvaju 30 dana.</li>
+      </ul>
+
+      <h2 id="uredjaji">10. Uređaji i opoziv</h2>
+      <p><strong>Nalog → Uređaji</strong> prikazuje sve uređaje na kojima je nalog otvoren, sa nazivom i datumom dodavanja; ovaj uređaj je prvi.</p>
+      <ul>
+        <li><strong>Opozovi</strong> kod uređaja koji ne prepoznajete ili ste izgubili. Aplikacija traži da potvrdite lozinkom. Opozvan uređaj se odjavljuje i više ne može da otvori nalog ni da menja fajlove. Ono što je već preuzeo ostaje na njemu.</li>
+        <li>Uređaj ne može da opozove sam sebe; to radite sa drugog uređaja.</li>
+        <li>Ako je opozvan uređaj ostavio izmene koje ovaj uređaj nije proverio, otvara se <strong>Neproverene izmene</strong>: za svaki fajl birate <strong>Zadrži</strong> ili <strong>Vrati raniju verziju</strong>. Dok ne odlučite, takav fajl se ne preuzima i ne sinhronizuje.</li>
+        <li>Opozvan uređaj može ponovo da se prijavi lozinkom, ali kao nov uređaj sa novim ključevima.</li>
+        <li><strong>Odjava</strong> na stranici Nalog odjavljuje samo ovaj uređaj.</li>
+      </ul>
+
+      <h2 id="oporavak">11. Oporavak frazom</h2>
+      <p>Ako ste zaboravili lozinku:</p>
+      <ol class="steps">
+        <li>Na početnom ekranu izaberite <strong>Oporavak frazom</strong>.</li>
+        <li>Upišite korisničko ime, svih 24 reči (razdvojene razmakom) i adresu servera, izaberite <strong>novu lozinku</strong> i kliknite <strong>Vrati pristup</strong>.</li>
+        <li>Opcija <strong>Zameni frazu novom (preporučeno)</strong> je uključena: aplikacija prikaže novu frazu, vi je zapišete i potvrdite, i tek tada se pristup vraća. Stara fraza posle toga više ne važi.</li>
+        <li>Aplikacija prikaže otisak vašeg naloga i spisak uređaja. Uporedite otisak sa onim koji ste ranije zapisali ili sa osobom sa kojom delite, i opozovite svaki uređaj koji ne prepoznajete. <strong>Nastavi</strong> otvara disk.</li>
+      </ol>
+      <p>Nova lozinka zamenjuje staru, a sve druge prijave lozinkom se završavaju. Uređaji koje ste ranije dodali nastavljaju da rade dok ih ne opozovete. Ako fraza nije tačna ili nalog ne postoji, odgovor je isti: „Fraza nije ispravna.“</p>
+
+      <h2 id="pokretanje">12. Pokretanje pri prijavi i ikonica u traci</h2>
+      <ul>
+        <li>Na stranici Sinhronizacija prekidač <strong>Pokreni TOG Drive pri prijavi na računar</strong> (podrazumevano isključen) pokreće aplikaciju u pozadini, bez prozora, kada se prijavite na računar.</li>
+        <li>Zatvaranje prozora ne gasi aplikaciju. Na Windows-u i macOS-u ona ostaje kao ikonica u traci (meni traka na macOS-u); meni ikonice ima <strong>Otvori TOG Drive</strong> i <strong>Izađi</strong>. Na Linuxu se prozor umanjuje, jer neka okruženja (na primer GNOME bez dodatka AppIndicator) ne prikazuju ikonice u traci.</li>
+        <li><strong>Izađi</strong> prvo bezbedno završi korak sinhronizacije koji je u toku, pa gasi aplikaciju.</li>
+        <li>Istovremeno radi samo jedna kopija aplikacije; ponovno pokretanje samo prikazuje već otvoren prozor.</li>
+        <li>Ako premestite aplikaciju u drugu fasciklu, isključite pa uključite prekidač da bi pokretanje pri prijavi pokazivalo na novo mesto.</li>
+      </ul>
+
+      <h2 id="mobilni">13. Mobilna aplikacija</h2>
+      <p>Aplikacije za iPhone, iPad i Android su u pripremi i stižu u App Store i Google Play posle desktop alfe. Plan je sledeći:</p>
+      <ul>
+        <li>prijava istim korisničkim imenom i lozinkom; telefon postaje još jedan uređaj u spisku <strong>Uređaji</strong> i može se opozvati kao i računar;</li>
+        <li>pregled, otpremanje, preuzimanje i deljenje kao na računaru, sa istim šifrovanjem na uređaju;</li>
+        <li>pristup fajlovima iz sistemske aplikacije Fajlovi i rezervna kopija fotografija dolaze u kasnijim verzijama.</li>
+      </ul>
+      <p>Do tada TOG Drive koristite na računaru.</p>
+
+      <h2 id="cesta-pitanja">14. Česta pitanja</h2>
+      <details><summary>Da li vi možete da vidite moje fajlove?</summary><p>Ne. Sadržaj i imena se šifruju na vašem uređaju ključevima koje nemamo. Server vidi samo šifrovane podatke i neke tehničke podatke, kao što su približne veličine i vreme izmena. Detalji su na stranici <a href="kako-radi.html">Kako radi</a>.</p></details>
+      <details><summary>Zaboravio sam lozinku. Šta sad?</summary><p>Koristite <a href="#oporavak">Oporavak frazom</a>. Ako nemate ni frazu, ali ste još prijavljeni na nekom uređaju, fajlove možete preuzeti sa tog uređaja. Bez lozinke, fraze i prijavljenog uređaja pristup se ne može vratiti.</p></details>
+      <details><summary>Da li se plaća?</summary><p>Alfa je besplatna, sa 10 GB prostora za test podatke. Plaćeni paketi nisu dostupni.</p></details>
+      <details><summary>Da li su moji podaci trajni?</summary><p>Na testnoj mreži nisu zagarantovani: kada se testna mreža ponovo pokrene, podaci mogu biti obrisani. Zato čuvajte kopiju važnih fajlova i na drugom mestu.</p></details>
+      <details><summary>Da li mi treba kriptovaluta ili novčanik?</summary><p>Ne. Skladište na mreži plaća operater servisa. Vi koristite samo korisničko ime i lozinku.</p></details>
+      <details><summary>Mogu li da promenim korisničko ime?</summary><p>Za sada ne. Ako vam treba drugo ime, napravite nov nalog i premestite fajlove.</p></details>
+      <details><summary>Šta ako nestane neki pružalac skladišta?</summary><p>Svaki deo šifrovanih podataka čuva se sa rezervom kod više pružalaca, pa se fajlovi mogu sastaviti i bez nekih od njih. Više na stranici <a href="kako-radi.html#nestanak">Kako radi</a>.</p></details>
+      <details><summary>Kako da obrišem nalog?</summary><p>Uputstvo je u odeljku <a href="privatnost.html#brisanje-naloga">Brisanje naloga</a> politike privatnosti.</p></details>
+
+      <h2 id="problemi">15. Rešavanje problema</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Problem</th><th>Rešenje</th></tr></thead>
+        <tbody>
+          <tr><td>Linux: aplikacija se ne pokreće, greška pominje <code>libayatana-appindicator3.so.1</code></td><td>Instalirajte <code>libayatana-appindicator3-1</code> (Ubuntu, Debian) ili <code>libayatana-appindicator-gtk3</code> (Fedora).</td></tr>
+          <tr><td>Windows: „Windows je zaštitio vaš računar“</td><td><strong>Više informacija → Ipak pokreni</strong>. Vidi <a href="#windows">Windows</a>.</td></tr>
+          <tr><td>macOS: „aplikacija ne može da se otvori“ ili „Apple ne može da proveri…“</td><td>Desni klik → Open, ili System Settings → Privacy &amp; Security → Open Anyway. Vidi <a href="#macos">macOS</a>.</td></tr>
+          <tr><td>„Skladište ključeva je zaključano“</td><td>Otključajte Keychain, GNOME Keyring ili KWallet (obično prijavom na sistem) i kliknite <strong>Pokušaj ponovo</strong>.</td></tr>
+          <tr><td>„folder je već u upotrebi“</td><td>Istu fasciklu već sinhronizuje druga kopija aplikacije ili drugi nalog. Izaberite drugu fasciklu ili ugasite drugu aplikaciju.</td></tr>
+          <tr><td>Sinhronizacija stoji sa porukom o grešci</td><td>Proverite internet vezu. Ako je greška ozbiljna, kliknite <strong>Pokreni ponovo</strong> na stranici Sinhronizacija.</td></tr>
+          <tr><td>„Niste prijavljeni. Prijavite se ponovo.“ odmah po pokretanju</td><td>Uređaj je možda opozvan sa drugog uređaja. Prijavite se lozinkom; uređaj će se dodati kao nov.</td></tr>
+          <tr><td>„Pogrešno korisničko ime ili lozinka.“</td><td>Proverite adresu servera u polju <strong>Napredno: server</strong>. Ako ste zaboravili lozinku, koristite oporavak frazom.</td></tr>
+          <tr><td>„Disk je skoro pun“ ili otpremanje odbijeno</td><td>Ispraznite kantu i obrišite stare verzije koje vam ne trebaju; i one ulaze u kvotu.</td></tr>
+          <tr><td>„Previše pokušaja, probaj kasnije.“</td><td>Server privremeno ograničava broj pokušaja radi zaštite. Sačekajte nekoliko minuta.</td></tr>
+        </tbody>
+      </table></div>
+      <p>Ako problem ostane, pišite nam na <span class="ph">[EMAIL ZA PODRŠKU]</span>. Nikada nam ne šaljite lozinku ni frazu za oporavak.</p>
+    </article>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>TOG Drive je alfa verzija na testnoj mreži The Only Grid. Ne čuvajte u njoj jedinu kopiju važnih fajlova.</span>
+    <nav aria-label="Footer"><a href="privatnost.html">Politika privatnosti</a> <a href="privatnost.html#brisanje-naloga">Brisanje naloga</a> <a href="uputstvo.html#cesta-pitanja">Česta pitanja</a></nav>
+  </div>
+</footer>
+</body>
+</html>

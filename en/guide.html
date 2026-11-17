@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TOG Drive guide</title>
+<meta name="description" content="Installing on Windows, macOS and Linux, creating an account, the recovery phrase, sync, sharing, public links, trash, devices, and answers to common questions.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#345b8c">
+<link rel="alternate" hreflang="sr-Latn" href="../uputstvo.html">
+<link rel="alternate" hreflang="en" href="guide.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#sadrzaj">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#345b8c"/><path d="M10.2 22.5h11.6a4.6 4.6 0 0 0 .6-9.15 6.4 6.4 0 0 0-12.3 1.6 3.8 3.8 0 0 0 .1 7.55z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><rect x="13.3" y="16.2" width="5.4" height="4.4" rx="1" fill="#fff"/><path d="M14.4 16.3v-1.3a1.6 1.6 0 0 1 3.2 0v1.3" fill="none" stroke="#fff" stroke-width="1.5"/></svg><span>TOG Drive</span></a>
+    <nav class="nav" aria-label="Main menu">
+      <a href="index.html">Home</a> <a href="guide.html" aria-current="page">Guide</a> <a href="how-it-works.html">How it works</a> <a href="privacy.html">Privacy</a> <a class="lang" href="../uputstvo.html" hreflang="sr-Latn" lang="sr-Latn">Srpski</a>
+    </nav>
+  </div>
+</header>
+<main id="sadrzaj">
+<div class="page">
+  <div class="wrap with-toc">
+    <nav class="toc" aria-label="Contents">
+      <strong>Contents</strong>
+      <ol>
+        <li><a href="#install">Installation</a></li>
+        <li><a href="#account">New account</a></li>
+        <li><a href="#phrase">Recovery phrase</a></li>
+        <li><a href="#signin">Other devices</a></li>
+        <li><a href="#browser">My drive</a></li>
+        <li><a href="#sync">Sync folder</a></li>
+        <li><a href="#sharing">Sharing</a></li>
+        <li><a href="#links">Public links</a></li>
+        <li><a href="#trash">Trash and versions</a></li>
+        <li><a href="#devices">Devices</a></li>
+        <li><a href="#recovery">Recovery</a></li>
+        <li><a href="#startup">Startup and tray</a></li>
+        <li><a href="#mobile">Mobile</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+      </ol>
+    </nav>
+    <article>
+      <h1>Guide</h1>
+      <p class="lead muted">How to install TOG Drive, create an account and use it safely. The app itself is in Serbian for now; button names are given in Serbian with the English meaning.</p>
+      <div class="warn"><p><strong>Alpha.</strong> TOG Drive runs on a test network. Data may be erased when the test network is restarted. Do not keep the only copy of important files in it.</p></div>
+
+      <h2 id="install">1. Installation</h2>
+      <p>Open the <a href="https://github.com/vahidzekic/theonlygrid-drive/releases/latest">latest release</a> and, under <em>Assets</em>, download the file for your system: <code>…-windows-x64.zip</code>, <code>…-linux-x64.tar.gz</code>, or the macOS file (<code>.zip</code>, a <code>.dmg</code> once notarized). If your system has no file in the latest release yet, it will come in a later one. Each release has a <code>SHA256SUMS</code> file for checking downloads.</p>
+      <h3>Windows</h3>
+      <p>Right-click <code>tog-drive-…-windows-x64.zip</code> → <strong>Extract All</strong>, then run <code>tog_drive.exe</code>. The app is not signed yet, so Microsoft Defender SmartScreen may show <em>“Windows protected your PC”</em>: click <strong>More info</strong>, then <strong>Run anyway</strong>. Only download the app from our GitHub releases page.</p>
+      <h3>macOS</h3>
+      <p>Double-click the download to unpack (.zip) or open (.dmg) it, and drag <strong>TOG Drive</strong> to <strong>Applications</strong>. Until the app is notarized by Apple, Gatekeeper blocks the first open. On macOS 14 and earlier, Control-click the app and choose <strong>Open</strong>, then <strong>Open</strong> again. On macOS 15 and later, close the warning, go to <strong>System Settings → Privacy &amp; Security</strong> and click <strong>Open Anyway</strong>. After an update, macOS may ask again whether TOG Drive may use its Keychain items: choose <strong>Always Allow</strong>. Requires macOS 12 or later.</p>
+      <h3>Linux</h3>
+      <p>An x64 <code>.tar.gz</code> archive for systems with GTK 3 and glibc 2.34+ (Ubuntu 22.04/24.04, Debian 12, recent Fedora). The tray icon library is required, otherwise the app does not start:</p>
+<pre><code># Ubuntu, Debian
+sudo apt install libayatana-appindicator3-1
+# Fedora
+sudo dnf install libayatana-appindicator-gtk3
+
+tar xzf tog-drive-*-linux-x64.tar.gz
+cd tog-drive-*-linux-x64
+./tog_drive        # run from the folder, or:
+./install.sh       # per-user install with a menu entry, no sudo</code></pre>
+      <p>Keys go to the system keyring (GNOME Keyring, KWallet) when there is one; otherwise to a file readable only by you.</p>
+
+      <h2 id="account">2. New account</h2>
+      <ol class="steps">
+        <li>Choose <strong>Novi nalog</strong> (New account).</li>
+        <li>Pick a username: 3 to 32 characters, lowercase a–z, digits and <code>. _ -</code>. Others use it to share with you.</li>
+        <li>Pick a password of at least 10 characters.</li>
+        <li>Enter your <strong>invite code</strong>. You get the server address with it; enter it under <strong>Napredno: server</strong> (Advanced: server). Left empty, the app works only locally on this computer.</li>
+        <li>Write down the 24-word recovery phrase, confirm the warning, then type the words the app asks for. Only then is the account created on the server.</li>
+      </ol>
+
+      <h2 id="phrase">3. Recovery phrase</h2>
+      <p>The phrase is your account's master key in a form you can write down. It is created on your device and we never see it.</p>
+      <ul>
+        <li>It restores access if you forget your password. There is no e-mail password reset: we do not have your keys.</li>
+        <li>If you lose <strong>both</strong> the password and the phrase and have no signed-in device, your files are gone for good.</li>
+        <li>Anyone with the phrase can open your files. Never share it; we will never ask for it.</li>
+        <li>Write it on paper, in order and numbered, and keep it somewhere safe. Do not photograph it, send it in a message or store it in the same TOG Drive. A password manager you trust is fine for a second copy.</li>
+      </ul>
+
+      <h2 id="signin">4. Signing in on another device</h2>
+      <p>Install the app, choose <strong>Prijava</strong> (Sign in), enter your username, password and the same server address, and give the device a name you will recognize later.</p>
+
+      <h2 id="browser">5. My drive</h2>
+      <p><strong>Moj disk</strong> (My drive) shows your files; <strong>Deljeno</strong> (Shared) shows folders you share and folders shared with you. Use <strong>Otpremi</strong> (Upload) and <strong>Nova fascikla</strong> (New folder). Right-click an item to download, rename, move, share, make a link, see versions or who has access, or move it to the trash. Uploading a file with the same name into the same folder makes it a new version. The <strong>Nalog</strong> (Account) page shows your storage use; the test quota is 10 GB, and trash and versions count toward it.</p>
+
+      <h2 id="sync">6. Sync folder (desktop)</h2>
+      <p>On <strong>Sinhronizacija</strong> (Sync), pick a folder (preferably empty, on a local disk) and press <strong>Pokreni</strong> (Start). Changes go both ways within seconds; <strong>Sinhronizuj sada</strong> syncs immediately. If a file was changed in two places, nothing is lost: a <em>conflict copy</em> with the device name and date appears next to it. Names some systems cannot store (like <code>a:b</code> or <code>CON</code>), links and special files are skipped and listed. One folder can be synced by one app at a time. Network drives (NFS, SMB) see remote changes late; use a local disk. Sync runs while the app runs.</p>
+
+      <h2 id="sharing">7. Sharing with other accounts</h2>
+      <ol class="steps">
+        <li>Right-click a folder → <strong>Podeli</strong> (Share). Only folders are shared for now; for a single file, share its folder or create a link.</li>
+        <li>Enter the recipient's username, press <strong>Pronađi</strong> (Find) and choose read or read-and-write.</li>
+        <li>Compare the <strong>key fingerprint</strong> (8 groups of 5 digits) with the person through another channel. They see theirs on the Account page.</li>
+        <li>If it matches, tick <strong>Proverio sam otisak sa osobom</strong> (I checked the fingerprint) and confirm. <strong>If it differs, do not share.</strong></li>
+      </ol>
+      <p>The app remembers the fingerprint and warns you if it changes. Ending a share removes access on the server at once; what the person already downloaded stays with them. Files a member adds count toward the owner's quota, and a member cannot permanently delete anything.</p>
+
+      <h2 id="links">8. Public links</h2>
+      <p>Right-click → <strong>Javni link</strong> (Public link). Optionally set a password, an expiry in days and a maximum number of downloads, then copy the link. The decryption key is the part after <code>#</code>, which is never sent to the server, so anyone with the link can open it: send a password through a different channel. <strong>Linkovi</strong> (Links) lists your links with download counts and expiry; the full URL shows only on the device that made it. Deleting a link disables it at once. The server may limit links for new free accounts (for example until the account is 30 days old). In the alpha, recipients open links with the TOG Drive command-line tool; opening in a browser is planned.</p>
+
+      <h2 id="trash">9. Trash and versions</h2>
+      <p>Deleted items stay in <strong>Kanta</strong> (Trash) for <strong>30 days</strong>, then are purged. <strong>Vrati</strong> restores, <strong>Obriši zauvek</strong> deletes for good. After purging, the file's keys are destroyed, so any encrypted bytes still on the network can no longer be read. <strong>Verzije</strong> (Versions) lists earlier versions with date, size and device; restoring makes a new version and deletes nothing. Older versions are kept for 30 days.</p>
+
+      <h2 id="devices">10. Devices and revoking</h2>
+      <p><strong>Nalog → Uređaji</strong> (Account → Devices) lists every device with access. <strong>Opozovi</strong> (Revoke) a device you lost or do not recognize; you confirm with your password. It is signed out and can no longer open the account or change files; what it already downloaded stays on it. A device cannot revoke itself. If the revoked device left changes this device had not checked, the app asks you to keep each one or roll it back. A revoked device can sign in again with the password as a new device.</p>
+
+      <h2 id="recovery">11. Recovery with the phrase</h2>
+      <p>Choose <strong>Oporavak frazom</strong> (Recover with phrase), enter your username, the 24 words, the server address and a new password, and press <strong>Vrati pristup</strong>. Keep <strong>Zameni frazu novom</strong> (Replace the phrase) on: you write down and confirm a new phrase, and the old one stops working. The app then shows your fingerprint and device list; compare the fingerprint with one you saved and revoke any device you do not recognize.</p>
+
+      <h2 id="startup">12. Startup and tray</h2>
+      <p>The switch <strong>Pokreni TOG Drive pri prijavi na računar</strong> (Start at login, off by default) starts the app in the background when you sign in to your computer. Closing the window keeps it running in the tray (Windows) or menu bar (macOS), with <strong>Otvori TOG Drive</strong> (Open) and <strong>Izađi</strong> (Quit). On Linux the window minimizes, since some desktops show no tray icons. Only one copy runs at a time.</p>
+
+      <h2 id="mobile">13. Mobile</h2>
+      <p>iPhone, iPad and Android apps are planned after the desktop alpha: the same account and password, a phone as one more device you can revoke, the same on-device encryption, and later access from the system Files app and photo backup. Until then, use the desktop app.</p>
+
+      <h2 id="faq">14. FAQ</h2>
+      <details><summary>Can you see my files?</summary><p>No. Contents and names are encrypted on your device with keys we do not have. See <a href="how-it-works.html">How it works</a>.</p></details>
+      <details><summary>I forgot my password.</summary><p>Use <a href="#recovery">recovery with the phrase</a>. Without the password, the phrase and a signed-in device, access cannot be restored.</p></details>
+      <details><summary>Does it cost anything?</summary><p>The alpha is free, with 10 GB for test data. There are no paid plans yet.</p></details>
+      <details><summary>Is my data permanent?</summary><p>Not on the test network: it may be erased when the network restarts. Keep copies elsewhere.</p></details>
+      <details><summary>Do I need cryptocurrency or a wallet?</summary><p>No. The service operator pays for storage on the network. You only need a username and password.</p></details>
+      <details><summary>How do I delete my account?</summary><p>See <a href="privacy.html#account-deletion">Account deletion</a>.</p></details>
+
+      <h2 id="troubleshooting">15. Troubleshooting</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td>Linux: does not start, mentions <code>libayatana-appindicator3.so.1</code></td><td>Install <code>libayatana-appindicator3-1</code> (Ubuntu, Debian) or <code>libayatana-appindicator-gtk3</code> (Fedora).</td></tr>
+          <tr><td>Windows SmartScreen warning</td><td><strong>More info → Run anyway</strong>.</td></tr>
+          <tr><td>macOS cannot verify the app</td><td>Control-click → Open, or System Settings → Privacy &amp; Security → Open Anyway.</td></tr>
+          <tr><td>“Skladište ključeva je zaključano” (keystore locked)</td><td>Unlock Keychain, GNOME Keyring or KWallet and press <strong>Pokušaj ponovo</strong> (Try again).</td></tr>
+          <tr><td>“folder je već u upotrebi” (folder in use)</td><td>Another app copy or account syncs that folder. Pick another folder or close the other app.</td></tr>
+          <tr><td>Signed out right after start</td><td>The device may have been revoked. Sign in with your password; it is added as a new device.</td></tr>
+          <tr><td>Wrong username or password</td><td>Check the server address under <strong>Napredno: server</strong>, or use recovery.</td></tr>
+          <tr><td>Drive almost full</td><td>Empty the trash and remove old versions; both count toward the quota.</td></tr>
+        </tbody>
+      </table></div>
+      <p>Still stuck? Write to <span class="ph">[SUPPORT EMAIL]</span>. Never send us your password or recovery phrase.</p>
+    </article>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>TOG Drive is an alpha on The Only Grid test network. Do not keep the only copy of important files in it.</span>
+    <nav aria-label="Footer"><a href="privacy.html">Privacy policy</a> <a href="privacy.html#account-deletion">Account deletion</a> <a href="guide.html#faq">FAQ</a></nav>
+  </div>
+</footer>
+</body>
+</html>
