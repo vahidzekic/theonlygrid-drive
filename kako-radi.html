@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kako radi TOG Drive</title>
+<meta name="description" content="Šifrovanje na uređaju, šta Drive gateway vidi i ne vidi, kako se šifrovani podaci čuvaju sa rezervom kod pružalaca skladišta na mreži The Only Grid, deljenje i javni linkovi.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#345b8c">
+<link rel="alternate" hreflang="sr-Latn" href="kako-radi.html">
+<link rel="alternate" hreflang="en" href="en/how-it-works.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#sadrzaj">Preskoči na sadržaj</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#345b8c"/><path d="M10.2 22.5h11.6a4.6 4.6 0 0 0 .6-9.15 6.4 6.4 0 0 0-12.3 1.6 3.8 3.8 0 0 0 .1 7.55z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><rect x="13.3" y="16.2" width="5.4" height="4.4" rx="1" fill="#fff"/><path d="M14.4 16.3v-1.3a1.6 1.6 0 0 1 3.2 0v1.3" fill="none" stroke="#fff" stroke-width="1.5"/></svg><span>TOG Drive</span></a>
+    <nav class="nav" aria-label="Glavni meni">
+      <a href="index.html">Početna</a> <a href="uputstvo.html">Uputstvo</a> <a href="kako-radi.html" aria-current="page">Kako radi</a> <a href="privatnost.html">Privatnost</a> <a class="lang" href="en/how-it-works.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+<main id="sadrzaj">
+<div class="page">
+  <div class="wrap narrow">
+    <article>
+      <h1>Kako radi</h1>
+      <p class="lead muted">Kratko i bez tehničkog žargona: šta se dešava sa fajlom od trenutka kada ga otpremite do trenutka kada ga neko otvori.</p>
+
+      <h2 id="ukratko">Ukratko</h2>
+      <ul>
+        <li><strong>Vaš uređaj</strong> šifruje sadržaj fajla i njegovo ime pre nego što išta pošalje.</li>
+        <li><strong>Drive gateway</strong> je server operatera servisa. On vodi nalog, čuva šifrovani spisak vaših fajlova i prosleđuje šifrovane podatke mreži. Ključeve nema.</li>
+        <li><strong>Pružaoci skladišta na mreži The Only Grid (TOG)</strong> čuvaju šifrovane podatke, sa rezervom, po ugovorima o skladištenju koje plaća operater.</li>
+      </ul>
+
+      <figure class="diagram">
+        <svg class="wide" viewBox="0 0 760 250" role="img" aria-labelledby="d1t d1d">
+          <title id="d1t">Put fajla</title>
+          <desc id="d1d">Uređaj šifruje fajl i šalje šifrovane podatke Drive gateway-u. Gateway ih pakuje i čuva kod više pružalaca skladišta na mreži TOG.</desc>
+          <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
+          <rect class="box" x="10" y="60" width="200" height="130" rx="14"/>
+          <text class="title" x="110" y="95" text-anchor="middle">Vaš uređaj</text>
+          <text x="110" y="122" text-anchor="middle">šifruje sadržaj</text>
+          <text x="110" y="142" text-anchor="middle">i imena</text>
+          <text class="small" x="110" y="172" text-anchor="middle">ključevi ostaju ovde</text>
+          <rect class="box" x="280" y="60" width="200" height="130" rx="14"/>
+          <text class="title" x="380" y="95" text-anchor="middle">Drive gateway</text>
+          <text x="380" y="122" text-anchor="middle">nalog, šifrovani</text>
+          <text x="380" y="142" text-anchor="middle">spisak, pakovanje</text>
+          <text class="small" x="380" y="172" text-anchor="middle">nema ključeve</text>
+          <rect class="plain" x="550" y="20" width="200" height="210" rx="14"/>
+          <text class="title" x="650" y="48" text-anchor="middle">Mreža TOG</text>
+          <rect class="box" x="572" y="66" width="70" height="40" rx="8"/><rect class="box" x="658" y="66" width="70" height="40" rx="8"/>
+          <rect class="box" x="572" y="118" width="70" height="40" rx="8"/><rect class="box" x="658" y="118" width="70" height="40" rx="8"/>
+          <rect class="box" x="615" y="170" width="70" height="40" rx="8"/>
+          <text class="small" x="650" y="224" text-anchor="middle">pružaoci skladišta</text>
+          <line class="line" x1="212" y1="125" x2="274" y2="125" marker-end="url(#ah)"/>
+          <text class="small" x="244" y="113" text-anchor="middle">šifrovano</text>
+          <line class="line" x1="482" y1="125" x2="544" y2="125" marker-end="url(#ah)"/>
+          <text class="small" x="514" y="113" text-anchor="middle">delovi</text>
+        </svg>
+        <svg class="tall" viewBox="0 0 340 560" role="img" aria-labelledby="d1tt d1dd">
+          <title id="d1tt">Put fajla</title>
+          <desc id="d1dd">Uređaj šifruje fajl i šalje šifrovane podatke Drive gateway-u. Gateway ih pakuje i čuva kod više pružalaca skladišta na mreži TOG.</desc>
+          <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
+          <rect class="box" x="40" y="10" width="260" height="120" rx="14"/>
+          <text class="title" x="170" y="44" text-anchor="middle">Vaš uređaj</text>
+          <text x="170" y="72" text-anchor="middle">šifruje sadržaj i imena</text>
+          <text class="small" x="170" y="104" text-anchor="middle">ključevi ostaju ovde</text>
+          <line class="line" x1="170" y1="132" x2="170" y2="182" marker-end="url(#ah2)"/>
+          <text class="small" x="180" y="162">šifrovano</text>
+          <rect class="box" x="40" y="188" width="260" height="120" rx="14"/>
+          <text class="title" x="170" y="222" text-anchor="middle">Drive gateway</text>
+          <text x="170" y="250" text-anchor="middle">nalog, šifrovani spisak,</text>
+          <text x="170" y="270" text-anchor="middle">pakovanje · nema ključeve</text>
+          <line class="line" x1="170" y1="310" x2="170" y2="360" marker-end="url(#ah2)"/>
+          <text class="small" x="180" y="340">delovi</text>
+          <rect class="plain" x="20" y="366" width="300" height="186" rx="14"/>
+          <text class="title" x="170" y="394" text-anchor="middle">Mreža TOG</text>
+          <rect class="box" x="45" y="412" width="74" height="42" rx="8"/><rect class="box" x="133" y="412" width="74" height="42" rx="8"/><rect class="box" x="221" y="412" width="74" height="42" rx="8"/>
+          <rect class="box" x="89" y="466" width="74" height="42" rx="8"/><rect class="box" x="177" y="466" width="74" height="42" rx="8"/>
+          <text class="small" x="170" y="536" text-anchor="middle">pružaoci skladišta</text>
+        </svg>
+        <figcaption>Ključevi nikada ne napuštaju vaše uređaje. Gateway i pružaoci skladišta dobijaju samo šifrovane podatke.</figcaption>
+      </figure>
+
+      <h2 id="sifrovanje">1. Šifrovanje na uređaju</h2>
+      <p>Kada napravite nalog, aplikacija na vašem uređaju napravi <strong>glavni ključ naloga</strong>. Iz njega se izvode svi ostali ključevi: svaka fascikla ima svoj ključ, svaki fajl svoj, a svaka verzija fajla svoj ključ za sadržaj.</p>
+      <ul>
+        <li>Fajl se deli na blokove i svaki blok se šifruje pre slanja. Blokovi su vezani za fajl i za svoje mesto u njemu, pa niko ne može neprimetno da ih zameni, ispremešta ili odseče.</li>
+        <li>Imena fajlova i fascikli se šifruju ključem fascikle u kojoj su.</li>
+        <li>Pre šifrovanja aplikacija fajl sažme kad to ima smisla i dopuni ga do zaokružene veličine, da se iz veličine ne bi videlo mnogo o sadržaju.</li>
+        <li>Svaku verziju fajla potpisuje uređaj koji ju je napravio. Ako bi neko na serveru podmetnuo izmenjen fajl, vaša aplikacija bi to odbila.</li>
+        <li>Glavni ključ se na server šalje samo zaključan: vašom lozinkom, frazom za oporavak i ključem svakog vašeg uređaja. Prijava koristi postupak (OPAQUE) u kome server nikada ne dobija vašu lozinku.</li>
+        <li>Koristimo proverene, javno opisane algoritme (između ostalog XChaCha20-Poly1305, Ed25519, X25519 sa ML-KEM-768 i Argon2id). Ne pravimo sopstvenu kriptografiju.</li>
+      </ul>
+
+      <h2 id="gateway">2. Šta Drive gateway vidi, a šta ne</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Gateway vidi</th><th>Gateway ne vidi</th></tr></thead>
+        <tbody><tr>
+          <td><ul>
+            <li>vaše korisničko ime</li>
+            <li>šifrovane blokove i njihove zaokružene veličine</li>
+            <li>koliko fajlova i fascikli imate i kako su ugnježdeni (bez imena)</li>
+            <li>vreme otpremanja i izmena</li>
+            <li>s kojim nalozima delite i sa kojim pravom</li>
+            <li>vaše javne ključeve i spisak uređaja</li>
+            <li>IP adresu sa koje se povezujete</li>
+          </ul></td>
+          <td><ul>
+            <li>sadržaj fajlova</li>
+            <li>imena fajlova i fascikli</li>
+            <li>tačne veličine i vrste fajlova</li>
+            <li>vašu lozinku i frazu za oporavak</li>
+            <li>ključeve za dešifrovanje</li>
+            <li>ključeve javnih linkova (deo linka posle <code>#</code>)</li>
+          </ul></td>
+        </tr></tbody>
+      </table></div>
+      <p>Gateway je potreban da bi aplikacija radila brzo i na telefonu: uvek je dostupan, prima otpremanja, pakuje male fajlove u velike celine, drži kratkotrajnu keš kopiju šifrovanih podataka za brže čitanje i brine o ugovorima o skladištenju. Za tajnost i ispravnost vaših fajlova mu ne morate verovati: on ne može da ih pročita, a izmenu bi vaša aplikacija primetila. Ono što gateway <em>može</em> jeste da bude nedostupan ili da izgubi podatke, i zato je važna rezervna kopija na mreži, opisana dole.</p>
+
+      <h2 id="skladiste">3. Kako se fajl čuva na mreži TOG</h2>
+      <p>The Only Grid je mreža na kojoj nezavisni pružaoci skladišta iznajmljuju prostor. Za mrežu su vaši fajlovi samo šifrovani bajtovi bez imena i bez veze sa vašim nalogom.</p>
+      <ol class="steps">
+        <li><strong>Pakovanje.</strong> Gateway skuplja šifrovane blokove mnogih korisnika u velike celine (segmente). Segment ne sadrži imena naloga.</li>
+        <li><strong>Ugovor o skladištenju.</strong> Za grupu segmenata operater otvara ugovor na mreži TOG i plaća ga. Ugovor traje ograničeno (na primer 30 dana) i gateway ga sam obnavlja pre isteka.</li>
+        <li><strong>Rezerva (erasure coding).</strong> Svaki segment se pretvara u veći broj delova, tako da je za vraćanje dovoljan samo deo njih. Primer: od 14 delova bilo kojih 10 je dovoljno. Delovi idu kod različitih pružalaca skladišta.</li>
+        <li><strong>Provera.</strong> Mreža redovno proverava da pružaoci zaista čuvaju ono za šta su plaćeni.</li>
+        <li><strong>Čitanje.</strong> Kada otvorite fajl, gateway ga daje iz keša ili ga sastavi od delova kod pružalaca, proveri da je ono što je dobio tačno ono što je sačuvano i pošalje vam šifrovane blokove. Dešifrovanje radi vaša aplikacija.</li>
+      </ol>
+
+      <figure class="diagram">
+        <svg class="ec" viewBox="0 0 360 340" role="img" aria-labelledby="d2t d2d">
+          <title id="d2t">Rezerva pomoću erasure coding-a</title>
+          <desc id="d2d">Segment se deli na 14 delova kod različitih pružalaca. Ako dva pružaoca nestanu, preostali delovi su dovoljni da se segment sastavi.</desc>
+          <rect class="box" x="70" y="10" width="220" height="50" rx="12"/>
+          <text class="title" x="180" y="41" text-anchor="middle">Šifrovani segment</text>
+          <line class="line" x1="180" y1="62" x2="180" y2="84"/>
+          <line class="line" x1="42" y1="84" x2="318" y2="84"/>
+          <line class="line" x1="42" y1="84" x2="42" y2="104"/><line class="line" x1="318" y1="84" x2="318" y2="104"/>
+          <rect class="box" x="24" y="110" width="36" height="44" rx="6"/><rect class="box" x="70" y="110" width="36" height="44" rx="6"/><rect class="plain dash" x="116" y="110" width="36" height="44" rx="6" style="stroke:var(--muted)"/><text class="small" x="134" y="137" text-anchor="middle">✕</text><rect class="box" x="162" y="110" width="36" height="44" rx="6"/><rect class="box" x="208" y="110" width="36" height="44" rx="6"/><rect class="box" x="254" y="110" width="36" height="44" rx="6"/><rect class="box" x="300" y="110" width="36" height="44" rx="6"/><rect class="box" x="24" y="166" width="36" height="44" rx="6"/><rect class="box" x="70" y="166" width="36" height="44" rx="6"/><rect class="box" x="116" y="166" width="36" height="44" rx="6"/><rect class="plain dash" x="162" y="166" width="36" height="44" rx="6" style="stroke:var(--muted)"/><text class="small" x="180" y="193" text-anchor="middle">✕</text><rect class="box" x="208" y="166" width="36" height="44" rx="6"/><rect class="box" x="254" y="166" width="36" height="44" rx="6"/><rect class="box" x="300" y="166" width="36" height="44" rx="6"/>
+          <text x="180" y="245" text-anchor="middle">14 delova, različiti pružaoci</text>
+          <text class="small" x="180" y="266" text-anchor="middle">dva pružaoca su nestala (isprekidano)</text>
+          <line class="line" x1="180" y1="276" x2="180" y2="290"/>
+          <rect class="box" x="60" y="290" width="240" height="42" rx="12"/>
+          <text x="180" y="317" text-anchor="middle">bilo kojih 10 je dovoljno ✓</text>
+        </svg>
+        <figcaption>Primer sa 14 delova od kojih je dovoljno 10. Stvarni broj zavisi od veličine mreže: na manjoj testnoj mreži rezerva je manja.</figcaption>
+      </figure>
+
+      <h2 id="obnova">4. Obnova i brisanje</h2>
+      <ul>
+        <li>Ugovori o skladištenju traju ograničeno i gateway ih obnavlja pre isteka. Kada u nekom segmentu ostane mnogo obrisanih podataka, gateway žive podatke prepakuje u nov segment, a stari ugovor pusti da istekne.</li>
+        <li>Kada trajno obrišete fajl (iz kante ili istekom 30 dana), gateway odmah briše njegove ključeve i zapise. Šifrovani bajtovi koji još stoje kod pružalaca do kraja starog ugovora (najviše oko 30 dana) posle toga ne mogu da se dešifruju. To se zove <em>kriptografsko brisanje</em>.</li>
+      </ul>
+
+      <h2 id="deljenje">5. Deljenje sa drugim nalogom</h2>
+      <p>Svaki nalog ima javni ključ. Kada podelite fasciklu, vaša aplikacija ključ te fascikle zaključa javnim ključem primaoca i potpiše deljenje. Server samo prenosi taj zaključani paket; otvoriti ga može samo primalac.</p>
+      <p>Javne ključeve za sada razmenjuje gateway. Zato aplikacija prikazuje <strong>otisak ključa</strong> (8 grupa od 5 cifara) koji uporedite sa osobom drugim putem, i pamti ga. Kada bi gateway kasnije podmetnuo drugi ključ, aplikacija bi vas upozorila. U planu je da se javni ključevi objavljuju na samoj mreži TOG, pa ni gateway neće moći da ih podmetne.</p>
+      <p>Kada ukinete deljenje, gateway odmah prekida pristup. Ono što je osoba već pročitala ili preuzela ostaje kod nje.</p>
+
+      <h2 id="linkovi">6. Javni linkovi</h2>
+      <p>Link izgleda otprilike ovako: <code>https://<em>server</em>/l/<em>oznaka</em>#<em>ključ</em></code>. Deo posle <code>#</code> je ključ. Pregledači i aplikacije taj deo nikada ne šalju serveru, pa server zna da link postoji, koliko je puta otvoren i kada ističe, ali ne može da ga otvori. Ako ste postavili lozinku, ključ se izvodi iz dela posle <code>#</code> i lozinke zajedno, pa sam link nije dovoljan.</p>
+      <p>Ko ima link, ima i ključ. Zato operater može da otvori sadržaj javnog linka koji mu neko prijavi kao zloupotrebu. Privatne fajlove bez linka ne može da otvori niko osim vas i onih sa kojima delite.</p>
+
+      <h2 id="nestanak">7. Šta ako nešto nestane</h2>
+      <ul>
+        <li><strong>Nestane jedan ili nekoliko pružalaca skladišta.</strong> Fajlovi se sastavljaju iz preostalih delova. Mreža traži da se ugovori ispune, a gateway pri obnovi bira pružaoce koji rade.</li>
+        <li><strong>Gateway je nedostupan.</strong> Dok se ne vrati, aplikacija ne može da otpremi ni preuzme fajlove. Fajlovi u vašoj fascikli za sinhronizaciju ostaju na računaru.</li>
+        <li><strong>Izgubite uređaj.</strong> Opozovite ga sa drugog uređaja. Ključevi ostaju zaštićeni lozinkom i frazom.</li>
+        <li><strong>Izgubite lozinku i frazu.</strong> Ako nemate nijedan prijavljen uređaj, fajlovi se ne mogu vratiti. To je cena toga što niko drugi nema vaše ključeve.</li>
+      </ul>
+
+      <h2 id="alfa">8. Status: alfa na testnoj mreži</h2>
+      <div class="warn">
+        <ul>
+          <li>TOG Drive je alfa verzija na testnoj mreži The Only Grid. Testna mreža se može ponovo pokrenuti od nule i tada se podaci brišu.</li>
+          <li>Format šifrovanja još nije zaključan, a nezavisna provera (audit) kriptografije klijenta planirana je pre javnog lansiranja sa pravim podacima.</li>
+          <li>Rezerva je na maloj testnoj mreži manja nego što će biti na glavnoj mreži.</li>
+          <li>Neke mogućnosti iz ovog opisa (objavljivanje javnih ključeva na mreži, otvaranje linkova u pregledaču, mobilne aplikacije) još nisu gotove.</li>
+        </ul>
+        <p>Koristite ga za probu i test podatke, i čuvajte kopiju važnih fajlova na drugom mestu.</p>
+      </div>
+    </article>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>TOG Drive je alfa verzija na testnoj mreži The Only Grid. Ne čuvajte u njoj jedinu kopiju važnih fajlova.</span>
+    <nav aria-label="Footer"><a href="privatnost.html">Politika privatnosti</a> <a href="privatnost.html#brisanje-naloga">Brisanje naloga</a> <a href="uputstvo.html#cesta-pitanja">Česta pitanja</a></nav>
+  </div>
+</footer>
+</body>
+</html>

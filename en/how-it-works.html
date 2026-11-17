@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How TOG Drive works</title>
+<meta name="description" content="On-device encryption, what the Drive gateway sees and does not see, and how encrypted data is stored with redundancy by storage providers on The Only Grid.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#345b8c">
+<link rel="alternate" hreflang="sr-Latn" href="../kako-radi.html">
+<link rel="alternate" hreflang="en" href="how-it-works.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#sadrzaj">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#345b8c"/><path d="M10.2 22.5h11.6a4.6 4.6 0 0 0 .6-9.15 6.4 6.4 0 0 0-12.3 1.6 3.8 3.8 0 0 0 .1 7.55z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><rect x="13.3" y="16.2" width="5.4" height="4.4" rx="1" fill="#fff"/><path d="M14.4 16.3v-1.3a1.6 1.6 0 0 1 3.2 0v1.3" fill="none" stroke="#fff" stroke-width="1.5"/></svg><span>TOG Drive</span></a>
+    <nav class="nav" aria-label="Main menu">
+      <a href="index.html">Home</a> <a href="guide.html">Guide</a> <a href="how-it-works.html" aria-current="page">How it works</a> <a href="privacy.html">Privacy</a> <a class="lang" href="../kako-radi.html" hreflang="sr-Latn" lang="sr-Latn">Srpski</a>
+    </nav>
+  </div>
+</header>
+<main id="sadrzaj">
+<div class="page">
+  <div class="wrap narrow">
+    <article>
+      <h1>How it works</h1>
+      <p class="lead muted">What happens to a file from the moment you upload it to the moment someone opens it, in plain words.</p>
+      <ul>
+        <li><strong>Your device</strong> encrypts a file's contents and name before anything is sent.</li>
+        <li><strong>The Drive gateway</strong> is the service operator's server. It runs accounts, keeps the encrypted list of your files and passes encrypted data on to the network. It has no keys.</li>
+        <li><strong>Storage providers on The Only Grid (TOG)</strong> keep the encrypted data, with redundancy, under storage deals the operator pays for.</li>
+      </ul>
+
+      <figure class="diagram">
+        <svg class="wide" viewBox="0 0 760 250" role="img" aria-labelledby="e1t e1d">
+          <title id="e1t">Path of a file</title>
+          <desc id="e1d">The device encrypts the file and sends encrypted data to the Drive gateway, which packs it and stores it with several storage providers on the TOG network.</desc>
+          <defs><marker id="eah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
+          <rect class="box" x="10" y="60" width="200" height="130" rx="14"/>
+          <text class="title" x="110" y="95" text-anchor="middle">Your device</text>
+          <text x="110" y="122" text-anchor="middle">encrypts contents</text>
+          <text x="110" y="142" text-anchor="middle">and names</text>
+          <text class="small" x="110" y="172" text-anchor="middle">keys stay here</text>
+          <rect class="box" x="280" y="60" width="200" height="130" rx="14"/>
+          <text class="title" x="380" y="95" text-anchor="middle">Drive gateway</text>
+          <text x="380" y="122" text-anchor="middle">account, encrypted</text>
+          <text x="380" y="142" text-anchor="middle">index, packing</text>
+          <text class="small" x="380" y="172" text-anchor="middle">has no keys</text>
+          <rect class="plain" x="550" y="20" width="200" height="210" rx="14"/>
+          <text class="title" x="650" y="48" text-anchor="middle">TOG network</text>
+          <rect class="box" x="572" y="66" width="70" height="40" rx="8"/><rect class="box" x="658" y="66" width="70" height="40" rx="8"/>
+          <rect class="box" x="572" y="118" width="70" height="40" rx="8"/><rect class="box" x="658" y="118" width="70" height="40" rx="8"/>
+          <rect class="box" x="615" y="170" width="70" height="40" rx="8"/>
+          <text class="small" x="650" y="224" text-anchor="middle">storage providers</text>
+          <line class="line" x1="212" y1="125" x2="274" y2="125" marker-end="url(#eah)"/>
+          <text class="small" x="244" y="113" text-anchor="middle">encrypted</text>
+          <line class="line" x1="482" y1="125" x2="544" y2="125" marker-end="url(#eah)"/>
+          <text class="small" x="514" y="113" text-anchor="middle">pieces</text>
+        </svg>
+        <svg class="tall" viewBox="0 0 340 560" role="img" aria-labelledby="e1tt e1dd">
+          <title id="e1tt">Path of a file</title>
+          <desc id="e1dd">The device encrypts the file and sends encrypted data to the Drive gateway, which packs it and stores it with several storage providers on the TOG network.</desc>
+          <defs><marker id="eah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
+          <rect class="box" x="40" y="10" width="260" height="120" rx="14"/>
+          <text class="title" x="170" y="44" text-anchor="middle">Your device</text>
+          <text x="170" y="72" text-anchor="middle">encrypts contents and names</text>
+          <text class="small" x="170" y="104" text-anchor="middle">keys stay here</text>
+          <line class="line" x1="170" y1="132" x2="170" y2="182" marker-end="url(#eah2)"/>
+          <text class="small" x="180" y="162">encrypted</text>
+          <rect class="box" x="40" y="188" width="260" height="120" rx="14"/>
+          <text class="title" x="170" y="222" text-anchor="middle">Drive gateway</text>
+          <text x="170" y="250" text-anchor="middle">account, encrypted index,</text>
+          <text x="170" y="270" text-anchor="middle">packing · has no keys</text>
+          <line class="line" x1="170" y1="310" x2="170" y2="360" marker-end="url(#eah2)"/>
+          <text class="small" x="180" y="340">pieces</text>
+          <rect class="plain" x="20" y="366" width="300" height="186" rx="14"/>
+          <text class="title" x="170" y="394" text-anchor="middle">TOG network</text>
+          <rect class="box" x="45" y="412" width="74" height="42" rx="8"/><rect class="box" x="133" y="412" width="74" height="42" rx="8"/><rect class="box" x="221" y="412" width="74" height="42" rx="8"/>
+          <rect class="box" x="89" y="466" width="74" height="42" rx="8"/><rect class="box" x="177" y="466" width="74" height="42" rx="8"/>
+          <text class="small" x="170" y="536" text-anchor="middle">storage providers</text>
+        </svg>
+        <figcaption>Keys never leave your devices. The gateway and the storage providers only ever get encrypted data.</figcaption>
+      </figure>
+
+      <h2 id="encryption">1. Encryption on your device</h2>
+      <p>When you create an account, the app makes an account master key on your device. Every folder, file and file version gets its own key derived from or wrapped under it. Files are split into blocks, each encrypted and bound to its file and position, so blocks cannot be swapped, reordered or cut off unnoticed. Names are encrypted with their folder's key. Files are compressed when it helps and padded to a rounded size. Each version is signed by the device that made it, so a file forged on the server would be rejected. The master key goes to the server only locked by your password, your recovery phrase and each device key; sign-in uses OPAQUE, so the server never gets your password. We use well-reviewed public algorithms (among them XChaCha20-Poly1305, Ed25519, X25519 with ML-KEM-768, Argon2id), not home-made cryptography.</p>
+
+      <h2 id="gateway">2. What the gateway sees and does not see</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Sees</th><th>Does not see</th></tr></thead>
+        <tbody><tr>
+          <td>your username; encrypted blocks and their rounded sizes; how many files and folders you have and how they nest (no names); upload and change times; who you share with and with which rights; your public keys and device list; your IP address</td>
+          <td>file contents; file and folder names; exact sizes and file types; your password and recovery phrase; decryption keys; public link keys (the part after <code>#</code>)</td>
+        </tr></tbody>
+      </table></div>
+      <p>The gateway is always online, takes uploads, packs small files into large units, keeps a short-lived cache of encrypted data for faster reads and manages storage deals. You do not have to trust it with secrecy or integrity. What it can do is be unavailable or lose data, which is why the copies on the network matter.</p>
+
+      <h2 id="storage">3. How a file is stored on TOG</h2>
+      <ol class="steps">
+        <li><strong>Packing.</strong> The gateway gathers encrypted blocks from many people into large segments. A segment carries no account names.</li>
+        <li><strong>Storage deal.</strong> The operator opens and pays for a deal on the TOG network for a group of segments. Deals run for a limited term (for example 30 days) and the gateway renews them before they end.</li>
+        <li><strong>Redundancy (erasure coding).</strong> Each segment becomes a larger number of pieces, of which only some are needed to rebuild it, for example any 10 of 14. The pieces go to different storage providers.</li>
+        <li><strong>Checks.</strong> The network regularly checks that providers really keep what they are paid for.</li>
+        <li><strong>Reading.</strong> The gateway serves from its cache or rebuilds from providers, verifies the data is exactly what was stored, and sends you the encrypted blocks. Your app decrypts them.</li>
+      </ol>
+      <figure class="diagram">
+        <svg class="ec" viewBox="0 0 360 340" role="img" aria-labelledby="e2t e2d">
+          <title id="e2t">Redundancy with erasure coding</title>
+          <desc id="e2d">A segment is split into 14 pieces held by different providers. If two providers disappear, the remaining pieces are enough to rebuild it.</desc>
+          <rect class="box" x="70" y="10" width="220" height="50" rx="12"/>
+          <text class="title" x="180" y="41" text-anchor="middle">Encrypted segment</text>
+          <line class="line" x1="180" y1="62" x2="180" y2="84"/>
+          <line class="line" x1="42" y1="84" x2="318" y2="84"/>
+          <line class="line" x1="42" y1="84" x2="42" y2="104"/><line class="line" x1="318" y1="84" x2="318" y2="104"/>
+          <rect class="box" x="24" y="110" width="36" height="44" rx="6"/><rect class="box" x="70" y="110" width="36" height="44" rx="6"/><rect class="plain dash" x="116" y="110" width="36" height="44" rx="6" style="stroke:var(--muted)"/><text class="small" x="134" y="137" text-anchor="middle">✕</text><rect class="box" x="162" y="110" width="36" height="44" rx="6"/><rect class="box" x="208" y="110" width="36" height="44" rx="6"/><rect class="box" x="254" y="110" width="36" height="44" rx="6"/><rect class="box" x="300" y="110" width="36" height="44" rx="6"/><rect class="box" x="24" y="166" width="36" height="44" rx="6"/><rect class="box" x="70" y="166" width="36" height="44" rx="6"/><rect class="box" x="116" y="166" width="36" height="44" rx="6"/><rect class="plain dash" x="162" y="166" width="36" height="44" rx="6" style="stroke:var(--muted)"/><text class="small" x="180" y="193" text-anchor="middle">✕</text><rect class="box" x="208" y="166" width="36" height="44" rx="6"/><rect class="box" x="254" y="166" width="36" height="44" rx="6"/><rect class="box" x="300" y="166" width="36" height="44" rx="6"/>
+          <text x="180" y="245" text-anchor="middle">14 pieces, different providers</text>
+          <text class="small" x="180" y="266" text-anchor="middle">two providers are gone (dashed)</text>
+          <line class="line" x1="180" y1="276" x2="180" y2="290"/>
+          <rect class="box" x="60" y="290" width="240" height="42" rx="12"/>
+          <text x="180" y="317" text-anchor="middle">any 10 are enough ✓</text>
+        </svg>
+        <figcaption>Example with 14 pieces, any 10 of which are enough. The real numbers depend on the network's size; the small test network uses less redundancy.</figcaption>
+      </figure>
+
+      <h2 id="renewal">4. Renewal and deletion</h2>
+      <p>The gateway renews deals before they end. When a segment holds mostly deleted data, the gateway repacks the live data into a new segment and lets the old deal expire. When you purge a file, the gateway deletes its keys and records at once; encrypted bytes still held by providers until the old deal ends (at most about 30 days) can no longer be decrypted. This is called crypto-shredding.</p>
+
+      <h2 id="sharing">5. Sharing keys</h2>
+      <p>Each account has a public key. Sharing a folder locks the folder's key to the recipient's public key and signs the share; the server only carries the sealed package. Public keys are handed out by the gateway for now, so the app shows a fingerprint to compare with the person, remembers it and warns if it changes. Publishing public keys on the TOG network itself, so not even the gateway could swap them, is planned. Ending a share cuts access at the server at once; what the person already read stays with them.</p>
+
+      <h2 id="links">6. Public links</h2>
+      <p>A link looks like <code>https://<em>server</em>/l/<em>id</em>#<em>key</em></code>. Browsers and apps never send the part after <code>#</code> to the server, so the server knows the link exists, how often it was opened and when it expires, but cannot open it. With a password, the key comes from the link and the password together. Whoever has the link has the key, so the operator can open a public link that is reported for abuse; private files without a link cannot be opened by anyone but you and the people you share with.</p>
+
+      <h2 id="loss">7. If something disappears</h2>
+      <ul>
+        <li><strong>A storage provider disappears:</strong> files are rebuilt from the remaining pieces, and renewals pick providers that work.</li>
+        <li><strong>The gateway is down:</strong> nothing can be uploaded or downloaded until it is back; files in your sync folder stay on your computer.</li>
+        <li><strong>You lose a device:</strong> revoke it from another device.</li>
+        <li><strong>You lose your password and phrase:</strong> without a signed-in device, files cannot be recovered. That is the price of nobody else having your keys.</li>
+      </ul>
+
+      <h2 id="alpha">8. Alpha status</h2>
+      <div class="warn"><p>TOG Drive is an alpha on The Only Grid test network, which may be restarted from scratch, erasing data. The encryption format is not frozen yet, and an independent audit of the client cryptography is planned before a public launch with real data. Redundancy on the small test network is lower than it will be on the main network. Some features described here (public keys on the network, opening links in a browser, mobile apps) are not finished. Use it for trying things out and keep copies of important files elsewhere.</p></div>
+    </article>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>TOG Drive is an alpha on The Only Grid test network. Do not keep the only copy of important files in it.</span>
+    <nav aria-label="Footer"><a href="privacy.html">Privacy policy</a> <a href="privacy.html#account-deletion">Account deletion</a> <a href="guide.html#faq">FAQ</a></nav>
+  </div>
+</footer>
+</body>
+</html>
