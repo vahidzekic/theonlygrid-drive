@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TOG Drive: Anleitung</title>
+<meta name="description" content="Installation unter Windows, macOS und Linux, Konto erstellen, Wiederherstellungsphrase, Synchronisierung, Teilen, öffentliche Links, Papierkorb, Geräte und Antworten auf häufige Fragen.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#345b8c">
+<link rel="alternate" hreflang="sr-Latn" href="../uputstvo.html">
+<link rel="alternate" hreflang="en" href="../en/guide.html">
+<link rel="alternate" hreflang="de" href="anleitung.html">
+<link rel="alternate" hreflang="x-default" href="../en/guide.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#sadrzaj">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#345b8c"/><path d="M10.2 22.5h11.6a4.6 4.6 0 0 0 .6-9.15 6.4 6.4 0 0 0-12.3 1.6 3.8 3.8 0 0 0 .1 7.55z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><rect x="13.3" y="16.2" width="5.4" height="4.4" rx="1" fill="#fff"/><path d="M14.4 16.3v-1.3a1.6 1.6 0 0 1 3.2 0v1.3" fill="none" stroke="#fff" stroke-width="1.5"/></svg><span>TOG Drive</span></a>
+    <nav class="nav" aria-label="Hauptmenü">
+      <a href="index.html">Start</a> <a href="anleitung.html" aria-current="page">Anleitung</a> <a href="so-funktioniert-es.html">So funktioniert es</a> <a href="datenschutz.html">Datenschutz</a> <details class="langmenu"><summary aria-label="Sprache: Deutsch"><img src="../flags/de.svg" alt="" width="20" height="14"><b>DE</b></summary><ul><li><a href="../uputstvo.html" hreflang="sr-Latn" lang="sr-Latn"><img src="../flags/sr.svg" alt="" width="20" height="14"><b>SR</b><span>Srpski</span></a></li><li><a href="../en/guide.html" hreflang="en" lang="en"><img src="../flags/en.svg" alt="" width="20" height="14"><b>EN</b><span>English</span></a></li><li><a href="anleitung.html" hreflang="de" lang="de" aria-current="true"><img src="../flags/de.svg" alt="" width="20" height="14"><b>DE</b><span>Deutsch</span></a></li></ul></details>
+    </nav>
+  </div>
+</header>
+<main id="sadrzaj">
+<div class="page">
+  <div class="wrap with-toc">
+    <nav class="toc" aria-label="Inhalt">
+      <strong>Inhalt</strong>
+      <ol>
+        <li><a href="#install">Installation</a></li>
+        <li><a href="#account">Neues Konto</a></li>
+        <li><a href="#phrase">Wiederherstellungsphrase</a></li>
+        <li><a href="#signin">Weitere Geräte</a></li>
+        <li><a href="#browser">Meine Ablage</a></li>
+        <li><a href="#sync">Synchronisierter Ordner</a></li>
+        <li><a href="#sharing">Teilen</a></li>
+        <li><a href="#links">Öffentliche Links</a></li>
+        <li><a href="#trash">Papierkorb und Versionen</a></li>
+        <li><a href="#devices">Geräte</a></li>
+        <li><a href="#recovery">Wiederherstellung</a></li>
+        <li><a href="#startup">Autostart und Taskleiste</a></li>
+        <li><a href="#mobile">Mobil</a></li>
+        <li><a href="#faq">Häufige Fragen</a></li>
+        <li><a href="#troubleshooting">Fehlerbehebung</a></li>
+      </ol>
+    </nav>
+    <article>
+      <h1>Anleitung</h1>
+      <p class="lead muted">So installieren Sie TOG Drive, erstellen ein Konto und nutzen es sicher. Die App gibt es auf Deutsch, Englisch und Serbisch; die Sprache wählen Sie im Menü mit der Flagge oben rechts. Version 0.1.0 ist noch nur auf Serbisch, die deutschen Bezeichnungen unten gelten ab der nächsten Version.</p>
+      <div class="warn"><p><strong>Alpha.</strong> TOG Drive läuft in einem Testnetz. Daten können gelöscht werden, wenn das Testnetz neu gestartet wird. Bewahren Sie nicht die einzige Kopie wichtiger Dateien darin auf.</p></div>
+
+      <h2 id="install">1. Installation</h2>
+      <p>Öffnen Sie die <a href="https://github.com/vahidzekic/theonlygrid-drive/releases/latest">neueste Version</a> und laden Sie unter <em>Assets</em> die Datei für Ihr System herunter: <code>…-windows-x64.zip</code>, <code>…-linux-x64.tar.gz</code> oder die macOS-Datei (<code>.zip</code>, nach der Notarisierung eine <code>.dmg</code>). Fehlt für Ihr System noch eine Datei in der neuesten Version, kommt sie mit einer späteren. Jede Version enthält eine Datei <code>SHA256SUMS</code> zur Prüfung der Downloads.</p>
+      <h3>Windows</h3>
+      <p>Klicken Sie mit der rechten Maustaste auf <code>tog-drive-…-windows-x64.zip</code> → <strong>Alle extrahieren</strong> und starten Sie dann <code>tog_drive.exe</code>. Die App ist noch nicht signiert, daher zeigt Microsoft Defender SmartScreen möglicherweise <em>„Der Computer wurde durch Windows geschützt“</em>: Klicken Sie auf <strong>Weitere Informationen</strong> und dann auf <strong>Trotzdem ausführen</strong>. Laden Sie die App nur von unserer Release-Seite auf GitHub herunter.</p>
+      <h3>macOS</h3>
+      <p>Doppelklicken Sie auf den Download, um ihn zu entpacken (.zip) oder zu öffnen (.dmg), und ziehen Sie <strong>TOG Drive</strong> in den Ordner <strong>Programme</strong>. Solange die App nicht von Apple notarisiert ist, blockiert Gatekeeper das erste Öffnen. Unter macOS 14 und älter klicken Sie bei gedrückter Ctrl-Taste auf die App, wählen <strong>Öffnen</strong> und dann erneut <strong>Öffnen</strong>. Unter macOS 15 und neuer schließen Sie die Warnung, öffnen <strong>Systemeinstellungen → Datenschutz &amp; Sicherheit</strong> und klicken auf <strong>Dennoch öffnen</strong>. Nach einem Update fragt macOS eventuell erneut, ob TOG Drive seine Schlüsselbundeinträge verwenden darf: Wählen Sie <strong>Immer erlauben</strong>. Voraussetzung ist macOS 12 oder neuer.</p>
+      <h3>Linux</h3>
+      <p>Ein x64-Archiv <code>.tar.gz</code> für Systeme mit GTK 3 und glibc 2.34+ (Ubuntu 22.04/24.04, Debian 12, aktuelles Fedora). Die Bibliothek für das Symbol in der Taskleiste ist nötig, sonst startet die App nicht:</p>
+<pre><code># Ubuntu, Debian
+sudo apt install libayatana-appindicator3-1
+# Fedora
+sudo dnf install libayatana-appindicator-gtk3
+
+tar xzf tog-drive-*-linux-x64.tar.gz
+cd tog-drive-*-linux-x64
+./tog_drive        # aus dem Ordner starten, oder:
+./install.sh       # Installation für den Benutzer mit Menüeintrag, ohne sudo</code></pre>
+      <p>Schlüssel landen im Schlüsselbund des Systems (GNOME Keyring, KWallet), falls vorhanden, sonst in einer Datei, die nur Sie lesen können.</p>
+
+      <h2 id="account">2. Neues Konto</h2>
+      <ol class="steps">
+        <li>Wählen Sie <strong>Neues Konto</strong>.</li>
+        <li>Wählen Sie einen Benutzernamen: 3 bis 32 Zeichen, Kleinbuchstaben a–z, Ziffern und <code>. _ -</code>. Andere verwenden ihn, um mit Ihnen zu teilen.</li>
+        <li>Wählen Sie ein Passwort mit mindestens 10 Zeichen.</li>
+        <li>Geben Sie Ihren <strong>Einladungscode</strong> ein. Dazu erhalten Sie die Serveradresse; tragen Sie sie unter <strong>Erweitert: Server</strong> ein. Bleibt das Feld leer, arbeitet die App nur lokal auf diesem Computer.</li>
+        <li>Schreiben Sie die Wiederherstellungsphrase aus 24 Wörtern auf, bestätigen Sie die Warnung und tippen Sie die Wörter ein, nach denen die App fragt. Erst dann wird das Konto auf dem Server angelegt.</li>
+      </ol>
+
+      <h2 id="phrase">3. Wiederherstellungsphrase</h2>
+      <p>Die Phrase ist der Hauptschlüssel Ihres Kontos in einer Form, die Sie aufschreiben können. Sie entsteht auf Ihrem Gerät, und wir sehen sie nie.</p>
+      <ul>
+        <li>Sie stellt den Zugang wieder her, wenn Sie Ihr Passwort vergessen. Ein Zurücksetzen per E-Mail gibt es nicht: Wir haben Ihre Schlüssel nicht.</li>
+        <li>Verlieren Sie Passwort <strong>und</strong> Phrase und ist kein Gerät mehr angemeldet, sind Ihre Dateien für immer verloren.</li>
+        <li>Wer die Phrase hat, kann Ihre Dateien öffnen. Geben Sie sie niemals weiter; wir werden nie danach fragen.</li>
+        <li>Schreiben Sie sie der Reihe nach und nummeriert auf Papier und bewahren Sie sie sicher auf. Fotografieren Sie sie nicht, versenden Sie sie nicht per Nachricht und legen Sie sie nicht in dasselbe TOG Drive. Ein Passwort-Manager, dem Sie vertrauen, eignet sich für eine zweite Kopie.</li>
+      </ul>
+
+      <h2 id="signin">4. Anmeldung auf einem weiteren Gerät</h2>
+      <p>Installieren Sie die App, wählen Sie <strong>Anmelden</strong>, geben Sie Benutzernamen, Passwort und dieselbe Serveradresse ein und geben Sie dem Gerät einen Namen, an dem Sie es später erkennen.</p>
+
+      <h2 id="browser">5. Meine Ablage</h2>
+      <p><strong>Meine Ablage</strong> zeigt Ihre Dateien; <strong>Geteilt</strong> zeigt Ordner, die Sie teilen, und Ordner, die mit Ihnen geteilt werden. Verwenden Sie <strong>Hochladen</strong> und <strong>Neuer Ordner</strong>. Mit einem Rechtsklick auf ein Element können Sie es herunterladen, umbenennen, verschieben, teilen, einen Link erstellen, Versionen oder Zugriffsrechte ansehen oder es in den Papierkorb verschieben. Laden Sie eine Datei mit demselben Namen in denselben Ordner hoch, wird sie zu einer neuen Version. Die Seite <strong>Konto</strong> zeigt den belegten Speicher; das Testkontingent beträgt 10 GB, Papierkorb und Versionen zählen mit.</p>
+
+      <h2 id="sync">6. Synchronisierter Ordner (Desktop)</h2>
+      <p>Wählen Sie unter <strong>Synchronisierung</strong> einen Ordner (am besten leer, auf einem lokalen Laufwerk) und drücken Sie <strong>Starten</strong>. Änderungen gehen innerhalb von Sekunden in beide Richtungen; <strong>Jetzt synchronisieren</strong> synchronisiert sofort. Wurde eine Datei an zwei Stellen geändert, geht nichts verloren: Daneben erscheint eine <em>Konfliktkopie</em> mit Gerätenamen und Datum. Namen, die manche Systeme nicht speichern können (etwa <code>a:b</code> oder <code>CON</code>), Verknüpfungen und Sonderdateien werden übersprungen und aufgelistet. Ein Ordner kann jeweils nur von einer App synchronisiert werden. Netzlaufwerke (NFS, SMB) bemerken Änderungen anderer erst spät; verwenden Sie ein lokales Laufwerk. Die Synchronisierung läuft, solange die App läuft.</p>
+
+      <h2 id="sharing">7. Teilen mit anderen Konten</h2>
+      <ol class="steps">
+        <li>Rechtsklick auf einen Ordner → <strong>Teilen</strong>. Vorerst lassen sich nur Ordner teilen; für eine einzelne Datei teilen Sie ihren Ordner oder erstellen einen Link.</li>
+        <li>Geben Sie den Benutzernamen des Empfängers ein, drücken Sie <strong>Suchen</strong> und wählen Sie Lesen oder Lesen und Schreiben.</li>
+        <li>Vergleichen Sie den <strong>Schlüssel-Fingerabdruck</strong> (8 Gruppen zu je 5 Ziffern) mit der Person über einen anderen Weg. Sie sieht ihren auf der Seite „Konto“.</li>
+        <li>Stimmt er überein, haken Sie <strong>Ich habe den Fingerabdruck mit der Person verglichen</strong> an und bestätigen Sie. <strong>Weicht er ab, teilen Sie nicht.</strong></li>
+      </ol>
+      <p>Die App merkt sich den Fingerabdruck und warnt Sie, wenn er sich ändert. Beenden Sie eine Freigabe, entzieht der Server den Zugriff sofort; was die Person bereits heruntergeladen hat, bleibt bei ihr. Dateien, die ein Mitglied hinzufügt, zählen zum Kontingent des Eigentümers, und ein Mitglied kann nichts endgültig löschen.</p>
+
+      <h2 id="links">8. Öffentliche Links</h2>
+      <p>Rechtsklick → <strong>Link erstellen</strong>. Legen Sie optional ein Passwort, eine Gültigkeit in Tagen und eine maximale Zahl an Downloads fest und kopieren Sie dann den Link. Der Schlüssel zum Entschlüsseln ist der Teil nach <code>#</code>, der nie an den Server gesendet wird; daher kann jeder mit dem Link ihn öffnen. Senden Sie ein Passwort über einen anderen Weg. Unter <strong>Links</strong> sehen Sie Ihre Links mit Download-Zahl und Ablaufdatum; die vollständige Adresse erscheint nur auf dem Gerät, das den Link erstellt hat. Ein gelöschter Link ist sofort deaktiviert. Der Server kann Links für neue kostenlose Konten einschränken (zum Beispiel bis das Konto 30 Tage alt ist). In der Alpha öffnen Empfänger Links mit dem Kommandozeilenwerkzeug von TOG Drive; das Öffnen im Browser ist geplant.</p>
+
+      <h2 id="trash">9. Papierkorb und Versionen</h2>
+      <p>Gelöschte Elemente bleiben <strong>30 Tage</strong> im <strong>Papierkorb</strong> und werden dann endgültig entfernt. <strong>Wiederherstellen</strong> holt sie zurück, <strong>Endgültig löschen</strong> entfernt sie für immer. Danach sind die Schlüssel der Datei vernichtet, sodass verschlüsselte Daten, die noch im Netzwerk liegen, nicht mehr lesbar sind. <strong>Versionen</strong> listet frühere Versionen mit Datum, Größe und Gerät; das Wiederherstellen erzeugt eine neue Version und löscht nichts. Ältere Versionen werden 30 Tage aufbewahrt.</p>
+
+      <h2 id="devices">10. Geräte und Widerrufen</h2>
+      <p><strong>Konto → Geräte</strong> listet jedes Gerät mit Zugriff. <strong>Widerrufen</strong> Sie ein Gerät, das Sie verloren haben oder nicht kennen; Sie bestätigen mit Ihrem Passwort. Es wird abgemeldet und kann das Konto nicht mehr öffnen oder Dateien ändern; was es bereits heruntergeladen hat, bleibt darauf. Ein Gerät kann sich nicht selbst widerrufen. Hat das widerrufene Gerät Änderungen hinterlassen, die dieses Gerät noch nicht geprüft hat, fragt die App Sie bei jeder, ob Sie sie behalten oder zurücksetzen. Ein widerrufenes Gerät kann sich mit dem Passwort als neues Gerät wieder anmelden.</p>
+
+      <h2 id="recovery">11. Wiederherstellung mit der Phrase</h2>
+      <p>Wählen Sie <strong>Mit Phrase wiederherstellen</strong>, geben Sie Ihren Benutzernamen, die 24 Wörter, die Serveradresse und ein neues Passwort ein und drücken Sie <strong>Zugang wiederherstellen</strong>. Lassen Sie <strong>Phrase durch eine neue ersetzen</strong> eingeschaltet: Sie schreiben eine neue Phrase auf und bestätigen sie, die alte funktioniert dann nicht mehr. Anschließend zeigt die App Ihren Fingerabdruck und die Geräteliste; vergleichen Sie den Fingerabdruck mit einem gespeicherten und widerrufen Sie jedes Gerät, das Sie nicht kennen.</p>
+
+      <h2 id="startup">12. Autostart und Taskleiste</h2>
+      <p>Der Schalter <strong>TOG Drive bei der Anmeldung am Computer starten</strong> (standardmäßig aus) startet die App im Hintergrund, wenn Sie sich am Computer anmelden. Wenn Sie das Fenster schließen, läuft sie in der Taskleiste (Windows) oder Menüleiste (macOS) weiter, mit <strong>TOG Drive öffnen</strong> und <strong>Beenden</strong>. Unter Linux wird das Fenster minimiert, da manche Desktops keine Symbole in der Taskleiste zeigen. Es läuft immer nur eine Instanz.</p>
+
+      <h2 id="mobile">13. Mobil</h2>
+      <p>Apps für iPhone, iPad und Android sind nach der Desktop-Alpha geplant: dasselbe Konto und Passwort, das Telefon als weiteres Gerät, das Sie widerrufen können, dieselbe Verschlüsselung auf dem Gerät und später Zugriff aus der Dateien-App des Systems sowie eine Fotosicherung. Bis dahin verwenden Sie die Desktop-App.</p>
+
+      <h2 id="faq">14. Häufige Fragen</h2>
+      <details><summary>Können Sie meine Dateien sehen?</summary><p>Nein. Inhalte und Namen werden auf Ihrem Gerät mit Schlüsseln verschlüsselt, die wir nicht haben. Siehe <a href="so-funktioniert-es.html">So funktioniert es</a>.</p></details>
+      <details><summary>Ich habe mein Passwort vergessen.</summary><p>Nutzen Sie die <a href="#recovery">Wiederherstellung mit der Phrase</a>. Ohne Passwort, Phrase und angemeldetes Gerät lässt sich der Zugang nicht wiederherstellen.</p></details>
+      <details><summary>Kostet es etwas?</summary><p>Die Alpha ist kostenlos, mit 10 GB für Testdaten. Bezahlte Tarife gibt es noch nicht.</p></details>
+      <details><summary>Sind meine Daten dauerhaft?</summary><p>Im Testnetz nicht: Sie können gelöscht werden, wenn das Netz neu startet. Bewahren Sie Kopien woanders auf.</p></details>
+      <details><summary>Brauche ich eine Kryptowährung oder ein Wallet?</summary><p>Nein. Der Betreiber des Dienstes bezahlt den Speicher im Netzwerk. Sie brauchen nur Benutzernamen und Passwort.</p></details>
+      <details><summary>Wie lösche ich mein Konto?</summary><p>Siehe <a href="datenschutz.html#account-deletion">Konto löschen</a>.</p></details>
+
+      <h2 id="troubleshooting">15. Fehlerbehebung</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Problem</th><th>Lösung</th></tr></thead>
+        <tbody>
+          <tr><td>Linux: startet nicht, Meldung nennt <code>libayatana-appindicator3.so.1</code></td><td>Installieren Sie <code>libayatana-appindicator3-1</code> (Ubuntu, Debian) oder <code>libayatana-appindicator-gtk3</code> (Fedora).</td></tr>
+          <tr><td>Windows-SmartScreen-Warnung</td><td><strong>Weitere Informationen → Trotzdem ausführen</strong>.</td></tr>
+          <tr><td>macOS kann die App nicht überprüfen</td><td>Ctrl-Klick → Öffnen, oder Systemeinstellungen → Datenschutz &amp; Sicherheit → Dennoch öffnen.</td></tr>
+          <tr><td>„Der Schlüsselspeicher ist gesperrt“</td><td>Entsperren Sie Schlüsselbund, GNOME Keyring oder KWallet und drücken Sie <strong>Erneut versuchen</strong>.</td></tr>
+          <tr><td>Ordner wird bereits verwendet</td><td>Eine andere Instanz der App oder ein anderes Konto synchronisiert diesen Ordner. Wählen Sie einen anderen Ordner oder schließen Sie die andere App.</td></tr>
+          <tr><td>Direkt nach dem Start abgemeldet</td><td>Das Gerät wurde möglicherweise widerrufen. Melden Sie sich mit Ihrem Passwort an; es wird als neues Gerät hinzugefügt.</td></tr>
+          <tr><td>Falscher Benutzername oder falsches Passwort</td><td>Prüfen Sie die Serveradresse unter <strong>Erweitert: Server</strong> oder nutzen Sie die Wiederherstellung.</td></tr>
+          <tr><td>Speicher fast voll</td><td>Leeren Sie den Papierkorb und entfernen Sie alte Versionen; beides zählt zum Kontingent.</td></tr>
+        </tbody>
+      </table></div>
+      <p>Kommen Sie nicht weiter? Schreiben Sie an <a href="mailto:vahidzekic@gmail.com">vahidzekic@gmail.com</a>. Senden Sie uns niemals Ihr Passwort oder Ihre Wiederherstellungsphrase.</p>
+    </article>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>TOG Drive ist eine Alpha im Testnetz von The Only Grid. Bewahren Sie nicht die einzige Kopie wichtiger Dateien darin auf.</span>
+    <nav aria-label="Fußzeile"><a href="datenschutz.html">Datenschutzerklärung</a> <a href="datenschutz.html#account-deletion">Konto löschen</a> <a href="anleitung.html#faq">Häufige Fragen</a></nav>
+  </div>
+</footer>
+</body>
+</html>
