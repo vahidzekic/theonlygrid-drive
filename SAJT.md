@@ -12,6 +12,8 @@ Svetla i tamna tema prate sistem (`prefers-color-scheme`). Font Inter se učitav
 | `kako-radi.html` | Kako radi: šifrovanje, gateway, skladište na mreži TOG (sa dva SVG dijagrama) |
 | `privatnost.html` | Politika privatnosti; odeljak za brisanje naloga je na `privatnost.html#brisanje-naloga` |
 | `en/index.html`, `en/guide.html`, `en/how-it-works.html`, `en/privacy.html` | Engleska verzija (`en/privacy.html#account-deletion`; radi i `#brisanje-naloga`) |
+| `de/index.html`, `de/anleitung.html`, `de/so-funktioniert-es.html`, `de/datenschutz.html` | Nemačka verzija (`de/datenschutz.html#account-deletion`; rade i `#konto-loeschen` i `#brisanje-naloga`) |
+| `flags/sr.svg`, `flags/en.svg`, `flags/de.svg` | Zastavice za meni jezika: padajući meni sa zastavicom i skraćenicom (SR/EN/DE) u zaglavlju svake strane, bez JavaScript-a (`<details class="langmenu">`). Pravila su u `docs/i18n.md` u repou The-Only-Grid. |
 | `404.html` | Stranica za nepostojeće adrese (stil i mali skript su u samom fajlu, jer se servira sa bilo koje putanje) |
 | `style.css` | Jedini stylesheet |
 | `favicon.svg` | Ikonica |

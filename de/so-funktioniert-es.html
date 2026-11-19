@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>So funktioniert TOG Drive</title>
+<meta name="description" content="Verschlüsselung auf dem Gerät, was das Drive-Gateway sieht und was nicht, und wie verschlüsselte Daten redundant bei Speicheranbietern im Netzwerk The Only Grid liegen.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#345b8c">
+<link rel="alternate" hreflang="sr-Latn" href="../kako-radi.html">
+<link rel="alternate" hreflang="en" href="../en/how-it-works.html">
+<link rel="alternate" hreflang="de" href="so-funktioniert-es.html">
+<link rel="alternate" hreflang="x-default" href="../en/how-it-works.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#sadrzaj">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#345b8c"/><path d="M10.2 22.5h11.6a4.6 4.6 0 0 0 .6-9.15 6.4 6.4 0 0 0-12.3 1.6 3.8 3.8 0 0 0 .1 7.55z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><rect x="13.3" y="16.2" width="5.4" height="4.4" rx="1" fill="#fff"/><path d="M14.4 16.3v-1.3a1.6 1.6 0 0 1 3.2 0v1.3" fill="none" stroke="#fff" stroke-width="1.5"/></svg><span>TOG Drive</span></a>
+    <nav class="nav" aria-label="Hauptmenü">
+      <a href="index.html">Start</a> <a href="anleitung.html">Anleitung</a> <a href="so-funktioniert-es.html" aria-current="page">So funktioniert es</a> <a href="datenschutz.html">Datenschutz</a> <details class="langmenu"><summary aria-label="Sprache: Deutsch"><img src="../flags/de.svg" alt="" width="20" height="14"><b>DE</b></summary><ul><li><a href="../kako-radi.html" hreflang="sr-Latn" lang="sr-Latn"><img src="../flags/sr.svg" alt="" width="20" height="14"><b>SR</b><span>Srpski</span></a></li><li><a href="../en/how-it-works.html" hreflang="en" lang="en"><img src="../flags/en.svg" alt="" width="20" height="14"><b>EN</b><span>English</span></a></li><li><a href="so-funktioniert-es.html" hreflang="de" lang="de" aria-current="true"><img src="../flags/de.svg" alt="" width="20" height="14"><b>DE</b><span>Deutsch</span></a></li></ul></details>
+    </nav>
+  </div>
+</header>
+<main id="sadrzaj">
+<div class="page">
+  <div class="wrap narrow">
+    <article>
+      <h1>So funktioniert es</h1>
+      <p class="lead muted">Was mit einer Datei geschieht, vom Hochladen bis zu dem Moment, in dem jemand sie öffnet, in einfachen Worten.</p>
+      <ul>
+        <li><strong>Ihr Gerät</strong> verschlüsselt Inhalt und Namen einer Datei, bevor irgendetwas gesendet wird.</li>
+        <li><strong>Das Drive-Gateway</strong> ist der Server des Dienstbetreibers. Es verwaltet Konten, führt die verschlüsselte Liste Ihrer Dateien und gibt verschlüsselte Daten an das Netzwerk weiter. Es hat keine Schlüssel.</li>
+        <li><strong>Speicheranbieter im Netzwerk The Only Grid (TOG)</strong> bewahren die verschlüsselten Daten redundant auf, im Rahmen von Speicherverträgen, die der Betreiber bezahlt.</li>
+      </ul>
+
+      <figure class="diagram">
+        <svg class="wide" viewBox="0 0 760 250" role="img" aria-labelledby="e1t e1d">
+          <title id="e1t">Weg einer Datei</title>
+          <desc id="e1d">Das Gerät verschlüsselt die Datei und sendet verschlüsselte Daten an das Drive-Gateway, das sie packt und bei mehreren Speicheranbietern im TOG-Netzwerk ablegt.</desc>
+          <defs><marker id="eah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
+          <rect class="box" x="10" y="60" width="200" height="130" rx="14"/>
+          <text class="title" x="110" y="95" text-anchor="middle">Ihr Gerät</text>
+          <text x="110" y="122" text-anchor="middle">verschlüsselt Inhalte</text>
+          <text x="110" y="142" text-anchor="middle">und Namen</text>
+          <text class="small" x="110" y="172" text-anchor="middle">Schlüssel bleiben hier</text>
+          <rect class="box" x="280" y="60" width="200" height="130" rx="14"/>
+          <text class="title" x="380" y="95" text-anchor="middle">Drive-Gateway</text>
+          <text x="380" y="122" text-anchor="middle">Konto, verschlüsselter</text>
+          <text x="380" y="142" text-anchor="middle">Index, Packen</text>
+          <text class="small" x="380" y="172" text-anchor="middle">hat keine Schlüssel</text>
+          <rect class="plain" x="550" y="20" width="200" height="210" rx="14"/>
+          <text class="title" x="650" y="48" text-anchor="middle">TOG-Netzwerk</text>
+          <rect class="box" x="572" y="66" width="70" height="40" rx="8"/><rect class="box" x="658" y="66" width="70" height="40" rx="8"/>
+          <rect class="box" x="572" y="118" width="70" height="40" rx="8"/><rect class="box" x="658" y="118" width="70" height="40" rx="8"/>
+          <rect class="box" x="615" y="170" width="70" height="40" rx="8"/>
+          <text class="small" x="650" y="224" text-anchor="middle">Speicheranbieter</text>
+          <line class="line" x1="212" y1="125" x2="274" y2="125" marker-end="url(#eah)"/>
+          <text class="small" x="244" y="113" text-anchor="middle">chiffriert</text>
+          <line class="line" x1="482" y1="125" x2="544" y2="125" marker-end="url(#eah)"/>
+          <text class="small" x="514" y="113" text-anchor="middle">Teile</text>
+        </svg>
+        <svg class="tall" viewBox="0 0 340 560" role="img" aria-labelledby="e1tt e1dd">
+          <title id="e1tt">Weg einer Datei</title>
+          <desc id="e1dd">Das Gerät verschlüsselt die Datei und sendet verschlüsselte Daten an das Drive-Gateway, das sie packt und bei mehreren Speicheranbietern im TOG-Netzwerk ablegt.</desc>
+          <defs><marker id="eah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
+          <rect class="box" x="40" y="10" width="260" height="120" rx="14"/>
+          <text class="title" x="170" y="44" text-anchor="middle">Ihr Gerät</text>
+          <text x="170" y="72" text-anchor="middle">verschlüsselt Inhalte und Namen</text>
+          <text class="small" x="170" y="104" text-anchor="middle">Schlüssel bleiben hier</text>
+          <line class="line" x1="170" y1="132" x2="170" y2="182" marker-end="url(#eah2)"/>
+          <text class="small" x="180" y="162">verschlüsselt</text>
+          <rect class="box" x="40" y="188" width="260" height="120" rx="14"/>
+          <text class="title" x="170" y="222" text-anchor="middle">Drive-Gateway</text>
+          <text x="170" y="250" text-anchor="middle">Konto, verschlüsselter Index,</text>
+          <text x="170" y="270" text-anchor="middle">Packen · hat keine Schlüssel</text>
+          <line class="line" x1="170" y1="310" x2="170" y2="360" marker-end="url(#eah2)"/>
+          <text class="small" x="180" y="340">Teile</text>
+          <rect class="plain" x="20" y="366" width="300" height="186" rx="14"/>
+          <text class="title" x="170" y="394" text-anchor="middle">TOG-Netzwerk</text>
+          <rect class="box" x="45" y="412" width="74" height="42" rx="8"/><rect class="box" x="133" y="412" width="74" height="42" rx="8"/><rect class="box" x="221" y="412" width="74" height="42" rx="8"/>
+          <rect class="box" x="89" y="466" width="74" height="42" rx="8"/><rect class="box" x="177" y="466" width="74" height="42" rx="8"/>
+          <text class="small" x="170" y="536" text-anchor="middle">Speicheranbieter</text>
+        </svg>
+        <figcaption>Schlüssel verlassen nie Ihre Geräte. Gateway und Speicheranbieter erhalten immer nur verschlüsselte Daten.</figcaption>
+      </figure>
+
+      <h2 id="encryption">1. Verschlüsselung auf Ihrem Gerät</h2>
+      <p>Wenn Sie ein Konto erstellen, erzeugt die App auf Ihrem Gerät einen Hauptschlüssel für das Konto. Jeder Ordner, jede Datei und jede Dateiversion erhält einen eigenen Schlüssel, der daraus abgeleitet oder damit verpackt wird. Dateien werden in Blöcke aufgeteilt, die jeweils verschlüsselt und an ihre Datei und Position gebunden sind, sodass Blöcke nicht unbemerkt vertauscht, umsortiert oder abgeschnitten werden können. Namen werden mit dem Schlüssel ihres Ordners verschlüsselt. Dateien werden komprimiert, wenn es etwas bringt, und auf eine gerundete Größe aufgefüllt. Jede Version wird von dem Gerät signiert, das sie erstellt hat, daher würde eine auf dem Server gefälschte Datei abgelehnt. Der Hauptschlüssel gelangt nur verschlossen zum Server: mit Ihrem Passwort, Ihrer Wiederherstellungsphrase und jedem Geräteschlüssel. Die Anmeldung nutzt OPAQUE, daher erhält der Server Ihr Passwort nie. Wir verwenden gut geprüfte, öffentliche Algorithmen (unter anderem XChaCha20-Poly1305, Ed25519, X25519 mit ML-KEM-768, Argon2id) und keine selbst gebaute Kryptografie.</p>
+
+      <h2 id="gateway">2. Was das Gateway sieht und was nicht</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Sieht</th><th>Sieht nicht</th></tr></thead>
+        <tbody><tr>
+          <td>Ihren Benutzernamen; verschlüsselte Blöcke und ihre gerundeten Größen; wie viele Dateien und Ordner Sie haben und wie sie verschachtelt sind (ohne Namen); Zeitpunkte von Uploads und Änderungen; mit wem Sie mit welchen Rechten teilen; Ihre öffentlichen Schlüssel und Ihre Geräteliste; Ihre IP-Adresse</td>
+          <td>Dateiinhalte; Datei- und Ordnernamen; genaue Größen und Dateitypen; Ihr Passwort und Ihre Wiederherstellungsphrase; Schlüssel zum Entschlüsseln; Schlüssel öffentlicher Links (der Teil nach <code>#</code>)</td>
+        </tr></tbody>
+      </table></div>
+      <p>Das Gateway ist immer online, nimmt Uploads an, packt kleine Dateien in große Einheiten, hält einen kurzlebigen Zwischenspeicher verschlüsselter Daten für schnelleres Lesen und verwaltet die Speicherverträge. Geheimhaltung und Unversehrtheit müssen Sie ihm nicht anvertrauen. Es kann aber ausfallen oder Daten verlieren, deshalb sind die Kopien im Netzwerk wichtig.</p>
+
+      <h2 id="storage">3. Wie eine Datei im TOG-Netzwerk gespeichert wird</h2>
+      <ol class="steps">
+        <li><strong>Packen.</strong> Das Gateway sammelt verschlüsselte Blöcke vieler Personen zu großen Segmenten. Ein Segment enthält keine Kontonamen.</li>
+        <li><strong>Speichervertrag.</strong> Der Betreiber schließt für eine Gruppe von Segmenten einen Vertrag im TOG-Netzwerk ab und bezahlt ihn. Verträge laufen befristet (zum Beispiel 30 Tage), und das Gateway verlängert sie vor ihrem Ende.</li>
+        <li><strong>Redundanz (Erasure Coding).</strong> Jedes Segment wird zu einer größeren Zahl von Teilen, von denen nur einige zum Wiederaufbau nötig sind, zum Beispiel beliebige 10 von 14. Die Teile gehen an verschiedene Speicheranbieter.</li>
+        <li><strong>Prüfungen.</strong> Das Netzwerk prüft regelmäßig, ob die Anbieter wirklich aufbewahren, wofür sie bezahlt werden.</li>
+        <li><strong>Lesen.</strong> Das Gateway liefert aus seinem Zwischenspeicher oder baut die Daten aus den Teilen der Anbieter wieder auf, prüft, dass sie genau dem Gespeicherten entsprechen, und sendet Ihnen die verschlüsselten Blöcke. Ihre App entschlüsselt sie.</li>
+      </ol>
+      <figure class="diagram">
+        <svg class="ec" viewBox="0 0 360 340" role="img" aria-labelledby="e2t e2d">
+          <title id="e2t">Redundanz mit Erasure Coding</title>
+          <desc id="e2d">Ein Segment wird in 14 Teile zerlegt, die verschiedene Anbieter halten. Fallen zwei Anbieter weg, reichen die übrigen Teile für den Wiederaufbau.</desc>
+          <rect class="box" x="70" y="10" width="220" height="50" rx="12"/>
+          <text class="title" x="180" y="41" text-anchor="middle">Verschlüsseltes Segment</text>
+          <line class="line" x1="180" y1="62" x2="180" y2="84"/>
+          <line class="line" x1="42" y1="84" x2="318" y2="84"/>
+          <line class="line" x1="42" y1="84" x2="42" y2="104"/><line class="line" x1="318" y1="84" x2="318" y2="104"/>
+          <rect class="box" x="24" y="110" width="36" height="44" rx="6"/><rect class="box" x="70" y="110" width="36" height="44" rx="6"/><rect class="plain dash" x="116" y="110" width="36" height="44" rx="6" style="stroke:var(--muted)"/><text class="small" x="134" y="137" text-anchor="middle">✕</text><rect class="box" x="162" y="110" width="36" height="44" rx="6"/><rect class="box" x="208" y="110" width="36" height="44" rx="6"/><rect class="box" x="254" y="110" width="36" height="44" rx="6"/><rect class="box" x="300" y="110" width="36" height="44" rx="6"/><rect class="box" x="24" y="166" width="36" height="44" rx="6"/><rect class="box" x="70" y="166" width="36" height="44" rx="6"/><rect class="box" x="116" y="166" width="36" height="44" rx="6"/><rect class="plain dash" x="162" y="166" width="36" height="44" rx="6" style="stroke:var(--muted)"/><text class="small" x="180" y="193" text-anchor="middle">✕</text><rect class="box" x="208" y="166" width="36" height="44" rx="6"/><rect class="box" x="254" y="166" width="36" height="44" rx="6"/><rect class="box" x="300" y="166" width="36" height="44" rx="6"/>
+          <text x="180" y="245" text-anchor="middle">14 Teile, verschiedene Anbieter</text>
+          <text class="small" x="180" y="266" text-anchor="middle">zwei Anbieter fehlen (gestrichelt)</text>
+          <line class="line" x1="180" y1="276" x2="180" y2="290"/>
+          <rect class="box" x="60" y="290" width="240" height="42" rx="12"/>
+          <text x="180" y="317" text-anchor="middle">beliebige 10 genügen ✓</text>
+        </svg>
+        <figcaption>Beispiel mit 14 Teilen, von denen beliebige 10 genügen. Die tatsächlichen Zahlen hängen von der Größe des Netzwerks ab; das kleine Testnetz nutzt weniger Redundanz.</figcaption>
+      </figure>
+
+      <h2 id="renewal">4. Verlängerung und Löschung</h2>
+      <p>Das Gateway verlängert Verträge vor ihrem Ende. Enthält ein Segment überwiegend gelöschte Daten, packt das Gateway die noch genutzten Daten in ein neues Segment und lässt den alten Vertrag auslaufen. Wenn Sie eine Datei endgültig löschen, entfernt das Gateway sofort ihre Schlüssel und Einträge; verschlüsselte Daten, die Anbieter noch bis zum Ende des alten Vertrags halten (höchstens etwa 30 Tage), lassen sich nicht mehr entschlüsseln. Das nennt man Crypto-Shredding.</p>
+
+      <h2 id="sharing">5. Schlüssel teilen</h2>
+      <p>Jedes Konto hat einen öffentlichen Schlüssel. Beim Teilen eines Ordners wird dessen Schlüssel mit dem öffentlichen Schlüssel des Empfängers verschlossen und die Freigabe signiert; der Server transportiert nur das versiegelte Paket. Öffentliche Schlüssel verteilt vorerst das Gateway, daher zeigt die App einen Fingerabdruck zum Vergleich mit der Person, merkt ihn sich und warnt, wenn er sich ändert. Geplant ist, öffentliche Schlüssel im TOG-Netzwerk selbst zu veröffentlichen, damit nicht einmal das Gateway sie austauschen kann. Beenden Sie eine Freigabe, entzieht der Server den Zugriff sofort; was die Person bereits gelesen hat, bleibt bei ihr.</p>
+
+      <h2 id="links">6. Öffentliche Links</h2>
+      <p>Ein Link sieht so aus: <code>https://<em>server</em>/l/<em>id</em>#<em>schlüssel</em></code>. Browser und Apps senden den Teil nach <code>#</code> nie an den Server. Der Server weiß also, dass der Link existiert, wie oft er geöffnet wurde und wann er abläuft, kann ihn aber nicht öffnen. Mit Passwort entsteht der Schlüssel aus Link und Passwort zusammen. Wer den Link hat, hat den Schlüssel; daher kann der Betreiber einen öffentlichen Link öffnen, der wegen Missbrauchs gemeldet wird. Private Dateien ohne Link kann niemand außer Ihnen und den Personen, mit denen Sie teilen, öffnen.</p>
+
+      <h2 id="loss">7. Wenn etwas verschwindet</h2>
+      <ul>
+        <li><strong>Ein Speicheranbieter fällt weg:</strong> Dateien werden aus den übrigen Teilen wieder aufgebaut, und Verlängerungen wählen Anbieter, die funktionieren.</li>
+        <li><strong>Das Gateway ist nicht erreichbar:</strong> Bis es wieder läuft, lässt sich nichts hoch- oder herunterladen; Dateien in Ihrem synchronisierten Ordner bleiben auf Ihrem Computer.</li>
+        <li><strong>Sie verlieren ein Gerät:</strong> Widerrufen Sie es von einem anderen Gerät aus.</li>
+        <li><strong>Sie verlieren Passwort und Phrase:</strong> Ohne angemeldetes Gerät lassen sich die Dateien nicht wiederherstellen. Das ist der Preis dafür, dass niemand sonst Ihre Schlüssel hat.</li>
+      </ul>
+
+      <h2 id="alpha">8. Alpha-Status</h2>
+      <div class="warn"><p>TOG Drive ist eine Alpha im Testnetz von The Only Grid, das von Grund auf neu gestartet werden kann, wobei Daten gelöscht werden. Das Verschlüsselungsformat ist noch nicht festgeschrieben, und vor einem öffentlichen Start mit echten Daten ist eine unabhängige Prüfung der Kryptografie im Client geplant. Die Redundanz im kleinen Testnetz ist geringer als später im Hauptnetz. Einige hier beschriebene Funktionen (öffentliche Schlüssel im Netzwerk, Öffnen von Links im Browser, mobile Apps) sind noch nicht fertig. Nutzen Sie TOG Drive zum Ausprobieren und bewahren Sie Kopien wichtiger Dateien woanders auf.</p></div>
+    </article>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>TOG Drive ist eine Alpha im Testnetz von The Only Grid. Bewahren Sie nicht die einzige Kopie wichtiger Dateien darin auf.</span>
+    <nav aria-label="Fußzeile"><a href="datenschutz.html">Datenschutzerklärung</a> <a href="datenschutz.html#account-deletion">Konto löschen</a> <a href="anleitung.html#faq">Häufige Fragen</a></nav>
+  </div>
+</footer>
+</body>
+</html>
